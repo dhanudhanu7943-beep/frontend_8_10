@@ -1,0 +1,71 @@
+1.Block Level Elements
+
+Take the full width of the page by default.
+Always start on a new line.
+Can contain block and inline elements.
+Used to create the structure/layout of a webpage.
+
+Examples:
+
+<div>
+<p>
+<h1> to <h6>
+<section>
+<article>
+
+
+2.Inline Elements
+
+Take only the width they need.
+Do not start on a new line.
+Usually used for text and small content.
+Cannot normally contain block elements.
+
+Examples:
+
+<span>
+<a>
+<strong>
+<em>
+<img>
+
+
+
+3.Formatting Tags
+
+Used to format or style text.
+
+Tag	Purpose
+<b>	Bold text
+<strong>Important bold text
+<i>	Italic text
+<em>	Emphasized text
+<u>	Underline
+<mark>	Highlight text
+<small>	Small text
+<del>	Deleted text
+
+
+4.Interactive Elements
+
+Used to let users interact with the webpage.
+
+Important Elements:
+
+<button> – Creates a button.
+<a> – Creates a clickable link.
+<input> – Accepts user input.
+<select> – Dropdown list.
+<textarea> – Multi-line text input.
+<details> – Expand/collapse section.
+<summary> – Title for <details>.
+
+
+
+
+
+
+
+
+
+

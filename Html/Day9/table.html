@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+<body>
+    <h1>Employee Registration & Employee Report</h1>
+    <form>
+        <label>Employee ID:</label><br>
+        <input type="text" name="empid"><br><br>
+
+        <label>Employee Name:</label><br>
+        <input type="text" name="empname"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
+
+        <label>Mobile:</label><br>
+        <input type="tel" name="mobile"><br><br>
+
+        <label>Department:</label><br>
+        <select name="department">
+            <option>Select Department</option>
+            <option>HR</option>
+            <option>IT</option>
+            <option>Finance</option>
+            <option>Marketing</option>
+            <option>Sales</option>
+        </select><br><br>
+
+        <label>Experience (Years):</label><br>
+        <input type="number" name="experience"><br><br>
+
+        <label>Salary:</label><br>
+        <input type="number" name="salary"><br><br>
+
+        <label>Skills:</label><br>
+        <input type="checkbox" name="skills" value="HTML"> HTML
+        <input type="checkbox" name="skills" value="CSS"> CSS
+        <input type="checkbox" name="skills" value="JavaScript"> JavaScript
+        <input type="checkbox" name="skills" value="Java"> Java
+        <input type="checkbox" name="skills" value="PHP"> PHP
+        <br><br>
+
+        <label>Resume Upload:</label><br>
+        <input type="file" name="resume"><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+    <br>
+    <hr>
+    <table border="5">
+        <thead>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Department</th>
+        <th>Experience</th>
+        <th>Salary</th>
+        <th>Skills</th>
+        <th>Resume Upload</th>
+         </thead>
+    <tbody>
+        <tr>
+            <td>101</td>
+            <td>Dhanu</td>
+            <td>dhanu@gmail.com</td>
+            <td>2345677889</td>
+            <td>Fs</td>
+            <td>2</td>
+            <td>22,000</td>
+            <td>React,sql</td>
+            <td><input type="file" name="resume"></td>          
+        </tr>
+        <br>
+          <tr>
+            <td>102</td>
+            <td>Moni</td>
+            <td>moni@gmail.com</td>
+            <td>2445677089</td>
+            <td>Fs</td>
+            <td>2</td>
+            <td>25,000</td>
+            <td>React,sql,css</td>
+            <td><input type="file" name="resume"></td>
+        </tr>
+          
+        <tr>
+            <td>103</td>
+            <td>Anpu</td>
+            <td>anpu@gmail.com</td>
+            <td>2444687089</td>
+            <td>web develpment</td>
+            <td>3</td>
+            <td>20,000</td>
+            <td>React,html,css</td>
+            <td><input type="file" name="resume"></td>
+        </tr>
+
+        <tr>
+            <td>104</td>
+            <td>Gayu</td>
+            <td>gayu@gmail.com</td>
+            <td>024468689</td>
+            <td>web develpment</td>
+            <td>2</td>
+            <td>28,000</td>
+            <td>React,html,css,sql</td>
+            <td><input type="file" name="resume"></td>
+
+        </tr>
+        <tr>
+            <td>105</td>
+            <td>Kavi</td>
+            <td>kavi@gmail.com</td>
+            <td>3245667649</td>
+            <td>web develpment</td>
+            <td>4</td>
+            <td>68,000</td>
+            <td>React,html,css,sql</td>
+            <td><input type="file" name="resume"></td>
+
+        </tr>
+    </tbody>
+
+    </table>
+</body>
+</html>

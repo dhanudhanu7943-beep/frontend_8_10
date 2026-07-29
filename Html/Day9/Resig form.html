@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <h1>Resigtration From</h1>
+    <form>
+        <label for="User name">Enter the Student Name:</label>
+        <input type="Name" placeholder="Enter the Name" id="User name"><br>
+        <br>
+        <label for="Mobile">Enter the Mobile no:</label>
+        <input type="tel" placeholder="Mobile No" id="Mobile"  minlength="10" maxlength="10">
+        <br><br>
+        <label for="Email">Enter the Email:</label>
+        <input type="email" placeholder="Email" id="Email">
+        <br><br>
+        <label for="Age">Enter the Age:</label>
+        <input type="Age" placeholder=" age" id="Age">
+        <br><br>
+        <label >Gender:</label>
+        <input type="radio" name="gender">male
+         <input type="radio" name="gender">Female
+         <br><br>
+
+         <label>Course:</label><br>
+        <select >
+            <option>Select Position</option>
+            <option>Software Developer</option>
+            <option>Web Designer</option>
+            <option>UI/UX Designer</option>
+            <option>Data Analyst</option>
+        </select><br><br>
+            <label>Address:</label><br>
+            <textarea rows="4" cols="30" placeholder="Enter your address"></textarea><br><br>
+          <br>
+       <label>Upload Resume:</label><br>
+        <input type="file" name="resume"><br><br>
+
+        <input type="reset" value="Reset">
+         <input type="submit" value="submit">
+         <br>
+    <hr>
+    </form>
+    <table border="5" >
+        <thead>
+        <th>SLA ID</th>
+        <th>Student Name</th>
+        <th>Course</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Status</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>dhanu</td>
+                <td>FS</td>
+                <td>dhanu@gamil.com</td>
+                <td>257656766</td>
+                <td>Active</td>
+            </tr>
+
+            <tr>
+                <td>102</td>
+                <td>moni</td>
+                <td>FS</td>
+                <td>moni@gamil.com</td>
+                <td>257656766</td>
+                <td>Active</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+h2, p, span {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: block;
+    margin: 5px;
+}
+
+
+div {
+    width: 350px;
+    padding: 15px;
+    margin: 15px auto;
+    border-radius: 8px;
+}
+
+
+
+
+.aspire {
+    background-color: lightyellow;
+    color: brown;
+}
+
+.cts {
+    background-color: lightcoral;
+    color: white;
+}
+
+.tcs {
+    background-color: lavender;
+    color: purple;
+}

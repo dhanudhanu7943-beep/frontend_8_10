@@ -1,0 +1,27 @@
+
+html{
+    scroll-behavior: smooth;
+}
+h2 {
+    color: white;
+}
+
+
+.company {
+    background-color: teal;
+    width: 300px;
+    height: 100px;
+    margin: 20px ;
+    padding-top: 30px;
+    text-align: center;
+}
+
+
+#uniq{
+    background-color: darkorange;
+    width: 300px;
+    height: 100px;
+    margin: 20px auto;
+    padding-top: 30px;
+    text-align: center;
+}

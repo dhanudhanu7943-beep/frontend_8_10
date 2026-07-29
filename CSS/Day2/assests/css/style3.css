@@ -1,0 +1,24 @@
+
+html{
+   scroll-behavior: smooth; 
+}
+.com{
+    background-color: rgb(224, 137, 224);
+    color: black;
+    width: 300px;
+    height: 100px;
+    margin: 20px ;
+    padding-top: 30px;
+    text-align: center;
+}
+
+#uiniq
+{
+    background-color: rgb(51, 122, 230);
+    color: black;
+    width: 300px;
+    height: 100px;
+    margin: 20px ;
+    padding-top: 30px;
+    text-align: center;
+}
