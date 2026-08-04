@@ -6,7 +6,23 @@
 html{
     scroll-behavior: smooth;
 }
+h2{
+    text-align: center;
+}
 .box2{
-    height:400px;
-    width: 500px;
+    height:500px;
+    width: 600px;
+    background-color: rgb(240, 192, 130);
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin:30px ;
+}
+.box2 img{
+    height: 300px;
+    width: 250px;
+}
+button{
+    padding: 3px;
+    margin: 16px;
 }

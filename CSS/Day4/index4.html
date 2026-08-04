@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display vs Visibility</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 80px;
+            margin: 10px;
+            color: white;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+            display: none;
+        }
+
+        .blue {
+            background-color: blue;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box red">Box 1</div>
+    <div class="box green">display: none</div>
+    <div class="box blue">visibility: hidden</div>
+    <div class="box red">Box 4</div>
+
+</body>
+</html>

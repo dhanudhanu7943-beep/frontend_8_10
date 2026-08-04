@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.box {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  background-color: lightblue;
+  border: 2px solid #000;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+.inline-element {
+  display: inline-block; /* or display: block; */
+  width: 200px;
+  height: 100px;
+}
