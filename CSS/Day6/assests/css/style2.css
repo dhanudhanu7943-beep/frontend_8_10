@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior:smooth;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.parent{
+    position: relative;
+    display: inline-block;
+    
+   
+}
+
+.cart{
+    background-color: #4CAF50;
+    color: white;
+    padding: 40px ;
+    border-radius: 8px;
+    font-size: 20px;
+    
+}
+
+.badge{
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    width: 24px;
+    height: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.box{
+    width: 200px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.box1{
+    background-color: steelblue;
+}
+
+.box2{
+    background-color: tomato;
+
+    position: relative;
+    top: 40px;
+    left: 60px;
+}
+h2{
+    text-align:center ;
+}
+
+.box{
+    width: 220px;
+    height: 80px;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+.static{
+    position: static;
+    background-color: steelblue;
+}
+
+
+.relative{
+    position: relative;
+    top: 20px;
+    left: 40px;
+    background-color: tomato;
+}
+
+.parent{
+    position: relative;
+    width: 350px;
+    height: 180px;
+    border: 2px dotted gray;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.absolute{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: green;
+}
+
+.fixed{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: purple;
+}
+
+
+.sticky{
+    position: sticky;
+    top: 0;
+    background-color: orange;
+    z-index: 100;
+}
+

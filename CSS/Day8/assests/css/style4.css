@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+  ul{
+            width: 250px;
+        }
+
+        li{
+            padding: 10px;
+            margin: 5px 0;
+            background-color: lightgray;
+        }
+
+    
+        li:first-child{
+            background-color: green;
+            color: white;
+            font-weight: bold;
+        }
+
+
+        li:last-child{
+            background-color: red;
+            color: white;
+            font-weight: bold;
+        }

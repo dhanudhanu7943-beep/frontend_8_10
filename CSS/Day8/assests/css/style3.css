@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+ h2{
+            color: darkblue;
+        }
+
+        ul{
+            width: 250px;
+        }
+
+        li{
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #f2f2f2;
+        }
+
+    
+        li:first-child{
+            background-color: lightgreen;
+            color: darkgreen;
+            font-weight: bold;
+        }
+
+    
+        li:last-child{
+            background-color: lightcoral;
+            color: white;
+            font-weight: bold;
+        }
+
+    
+
+        .heading::before{
+            content: "★ ";
+            color: orange;
+        }
+
+        .heading::after{
+            content: " ✔";
+            color: green;
+        }

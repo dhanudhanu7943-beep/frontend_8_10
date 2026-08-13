@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.contain{
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+margin: 30px;
+padding: 20px;
+
+}
+
+.card>img{
+    height:230px ;
+    width: 280px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.card>h3{
+   text-align:justify;
+}
+
+  @media (max-width: 768px) {
+    .contain{
+         flex-direction: column;
+         background-color: darkgoldenrod;
+    }
+
+  }
+
+   @media (max-width: 576px) {
+    .contain{
+         flex-direction: column;
+         background-color: rgb(75, 233, 154);
+    }
+
+  }

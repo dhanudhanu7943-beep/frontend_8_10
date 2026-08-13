@@ -12,11 +12,15 @@ body{
 a{
     text-decoration: none;
 }
- 
+ header{
+   position:sticky;
+    top: 0;
+    z-index: 100;
+ }
 .nav{
     height: 50px;
     background-color:blanchedalmond ;
-    display: flex;
+   
     justify-content: space-around;
     padding: 20px;
    
@@ -36,6 +40,41 @@ a{
     padding: 60px;
     font-size:large;
     font-family:Arial, Helvetica, sans-serif ;
+}
+.img{
+    height: 450px;
+    background-color: aquamarine;
+    border: 3px solid blue;
+    justify-content: space-around;
+    padding: 20px;
+     text-align: center;
+    padding: 60px;
+    font-size:large;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+.img>img{
+      height: 220px;
+      padding: 20px;
+      background-color:black ;
+      top:10px;
+      
+}
+.b1{
+    height: 100px;
+    background-color: antiquewhite;
+    
+}
+
+.fixed {
+   
+    position: fixed;
+    bottom: 2px;
+    right: 20px;
+    background-color:rgb(56, 156, 10);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+   
 }
 
     
