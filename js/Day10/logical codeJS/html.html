@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Mastery - 25+ Core Topics & Live Sandbox</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assests/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-orange-500 selection:text-white">
+
+  <!-- Universal Header / Navbar -->
+  <header class="sticky top-0 z-40 glass-panel border-b border-slate-800/80 bg-slate-950/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-orange-600/20 border border-orange-500/40 flex items-center justify-center text-orange-400 font-black text-lg group-hover:scale-105 transition-transform">
+          &lt;/&gt;
+        </div>
+        <div>
+          <span class="font-extrabold text-lg tracking-tight text-white">DevMaster</span>
+          <span class="text-[10px] font-mono block text-orange-400 font-semibold -mt-1 tracking-widest uppercase">HTML Track</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 font-medium text-sm">
+        <a href="index.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition">Dashboard</a>
+        <a href="html.html" class="px-4 py-2 rounded-lg text-orange-400 bg-orange-950/40 border-b-2 border-orange-500 transition">HTML (25)</a>
+        <a href="css.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-sky-400 hover:bg-sky-950/30 transition">CSS (25)</a>
+        <a href="javascript.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-amber-950/30 transition">JavaScript (25)</a>
+        <a href="tailwind.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-teal-400 hover:bg-teal-950/30 transition">Tailwind (25)</a>
+      </nav>
+
+      <!-- Quiz Button & Stats -->
+      <div class="flex items-center gap-3">
+        <button onclick="openQuizModal('HTML5', window.htmlQuiz)" class="px-4 py-2 rounded-xl text-xs font-bold bg-orange-600 hover:bg-orange-500 text-white shadow-lg shadow-orange-500/20 transition flex items-center gap-2">
+          <span>🎯 Take Quiz</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Hero / Progress Header -->
+    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-orange-500/20 bg-gradient-to-r from-orange-950/30 via-slate-900 to-slate-950 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-300 text-xs font-semibold">
+          <span>🔥 25 Essential HTML5 Topics</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-black text-white">HTML5 Mastery Hub</h1>
+        <p class="text-sm text-slate-300 max-w-xl">
+          Learn document architecture, semantic layout, modern forms, multimedia, SVG graphics, Dialog API, and Web Components with live interactive preview.
+        </p>
+      </div>
+
+      <!-- Live Track Progress Widget -->
+      <div class="glass-card p-4 rounded-2xl border border-slate-800 w-full md:w-64 space-y-2">
+        <div class="flex justify-between text-xs font-semibold">
+          <span class="text-slate-400">Track Progress</span>
+          <span id="progress-percentage" class="text-orange-400 font-mono">0%</span>
+        </div>
+        <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+          <div id="progress-bar-fill" class="bg-orange-500 h-full w-0 transition-all duration-500"></div>
+        </div>
+        <div class="text-[11px] text-slate-400 text-right">
+          Completed: <span id="completed-count" class="font-bold text-white">0 / 25</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Interactive HTML Code Sandbox Playground -->
+    <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+      <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+          <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+          <span class="text-xs font-mono text-slate-300 font-bold ml-2">⚡ Live Interactive HTML Sandbox</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="resetHtmlSandbox()" class="text-xs text-slate-400 hover:text-white px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 transition">
+            Reset Code
+          </button>
+          <button onclick="runHtmlSandbox()" class="text-xs text-white px-3 py-1 rounded bg-orange-600 hover:bg-orange-500 font-semibold transition flex items-center gap-1">
+            ▶ Render Live
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-800 min-h-[300px]">
+        <!-- Code Editor Pane -->
+        <div class="p-4 bg-slate-950 flex flex-col">
+          <label class="text-xs font-mono text-slate-400 mb-2 flex justify-between">
+            <span>Editable HTML Input:</span>
+            <span class="text-[10px] text-slate-500">Type freely below</span>
+          </label>
+          <textarea id="html-sandbox-editor" class="w-full flex-1 bg-slate-900 text-slate-100 p-3 rounded-xl border border-slate-800 font-mono text-xs focus:ring-2 focus:ring-orange-500 focus:outline-none resize-y min-h-[180px]" spellcheck="false">&lt;div style="padding: 20px; text-align: center; background: #0f172a; border-radius: 12px; color: #fff;"&gt;
+  &lt;h2 style="color: #f97316; margin-top: 0;"&gt;✨ Interactive HTML Preview&lt;/h2&gt;
+  &lt;p style="color: #cbd5e1; font-size: 14px;"&gt;Edit the code on the left and see changes live!&lt;/p&gt;
+  &lt;button style="background: #f97316; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;" onclick="alert('HTML Sandbox Works!')"&gt;
+    Click Me!
+  &lt;/button&gt;
+&lt;/div&gt;</textarea>
+        </div>
+
+        <!-- Live Render Preview Pane -->
+        <div class="p-4 bg-slate-900/40 flex flex-col">
+          <span class="text-xs font-mono text-slate-400 mb-2">Live Output Render:</span>
+          <iframe id="html-sandbox-preview" class="w-full flex-1 min-h-[180px] bg-slate-950 border border-slate-800 rounded-xl p-2" sandbox="allow-scripts"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search & Filters -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <!-- Search Input -->
+      <div class="relative w-full sm:w-80">
+        <input type="text" id="topic-search" placeholder="Search 25+ HTML topics..." class="w-full bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50">
+        <span class="absolute right-3 top-3 text-slate-500 text-xs">🔍</span>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0" id="filter-pills">
+        <button onclick="filterHtmlTopics('all')" class="category-pill active px-3 py-1.5 rounded-lg text-xs font-semibold bg-orange-600 text-white transition">All (25)</button>
+        <button onclick="filterHtmlTopics('Structure')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Structure</button>
+        <button onclick="filterHtmlTopics('Forms')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Forms</button>
+        <button onclick="filterHtmlTopics('Interactive')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Interactive</button>
+        <button onclick="filterHtmlTopics('Media')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Media</button>
+      </div>
+    </div>
+
+    <!-- Topics Grid (Rendered Dynamically via JS) -->
+    <div id="html-topics-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Dynamic HTML cards will be injected here -->
+    </div>
+
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-8 text-center text-xs text-slate-500 mt-12">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p>&copy; 2026 DevMaster Learning Hub &bull; 25+ Comprehensive HTML5 Topics</p>
+      <div class="flex justify-center gap-4 text-slate-400">
+        <a href="index.html" class="hover:text-white">Dashboard</a>
+        <span>&bull;</span>
+        <a href="css.html" class="hover:text-sky-400">CSS (25)</a>
+        <span>&bull;</span>
+        <a href="javascript.html" class="hover:text-amber-400">JavaScript (25)</a>
+        <span>&bull;</span>
+        <a href="tailwind.html" class="hover:text-teal-400">Tailwind (25)</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assests/js/common.js"></script>
+  <script src="assests/js/html-data.js"></script>
+  <script>
+    window.topicsData = window.htmlTopics;
+    let activeCategory = 'all';
+
+    function renderTopics(topics) {
+      const container = document.getElementById('html-topics-container');
+      if (!container) return;
+
+      if (topics.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-12 glass-panel rounded-2xl">
+            <p class="text-slate-400 text-sm">No topics found matching your search.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = topics.map(t => {
+        const isDone = ProgressTracker.isCompleted('html', t.id);
+        return `
+          <div class="glass-card p-6 rounded-2xl border ${isDone ? 'border-emerald-500/40 bg-emerald-950/10' : 'border-slate-800'} flex flex-col justify-between space-y-4" id="card-${t.id}">
+            <div>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20">${t.category}</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded ${t.difficulty === 'Beginner' ? 'bg-emerald-500/10 text-emerald-400' : t.difficulty === 'Intermediate' ? 'bg-amber-500/10 text-amber-400' : 'bg-purple-500/10 text-purple-400'}">${t.difficulty}</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white">${t.title}</h3>
+                </div>
+                <!-- Checkbox -->
+                <button onclick="toggleTopicDone('${t.id}')" title="Mark as Completed" class="w-8 h-8 rounded-xl border flex items-center justify-center transition shrink-0 ${isDone ? 'bg-emerald-500 border-emerald-400 text-slate-950' : 'border-slate-700 bg-slate-900 text-slate-500 hover:border-slate-500'}">
+                  ${isDone ? '✓' : ''}
+                </button>
+              </div>
+
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">${t.explanation}</p>
+            </div>
+
+            <!-- Code Block with Copy & Send to Sandbox -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                <span>Code Example:</span>
+                <div class="flex gap-2">
+                  <button onclick="loadIntoSandbox(\`${escapeHTML(t.code)}\`)" class="text-orange-400 hover:text-orange-300">
+                    ⚡ Load to Sandbox
+                  </button>
+                  <button onclick="copyToClipboard(\`${escapeHTML(t.code)}\`, this)" class="hover:text-white">
+                    📋 Copy
+                  </button>
+                </div>
+              </div>
+              <pre class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs font-mono text-orange-200 overflow-x-auto"><code>${escapeHTML(t.code)}</code></pre>
+            </div>
+
+            <!-- Live Output Preview -->
+            <div>
+              <span class="text-[11px] text-slate-400 font-mono block mb-1">Live Output Preview:</span>
+              ${t.preview}
+            </div>
+
+            <!-- Pro Tip -->
+            <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-slate-400">
+              <strong class="text-orange-400">Pro-Tip:</strong> ${t.tips}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleTopicDone(id) {
+      ProgressTracker.toggleTopic('html', id);
+      applyFilterAndSearch();
+    }
+
+    function filterHtmlTopics(category) {
+      activeCategory = category;
+      document.querySelectorAll('#filter-pills .category-pill').forEach(btn => {
+        if ((category === 'all' && btn.textContent.includes('All')) || btn.textContent === category) {
+          btn.className = 'category-pill active px-3 py-1.5 rounded-lg text-xs font-semibold bg-orange-600 text-white transition';
+        } else {
+          btn.className = 'category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition';
+        }
+      });
+      applyFilterAndSearch();
+    }
+
+    function applyFilterAndSearch() {
+      const query = document.getElementById('topic-search')?.value.toLowerCase() || '';
+      const filtered = window.htmlTopics.filter(t => {
+        const matchesCat = activeCategory === 'all' || t.category === activeCategory;
+        const matchesSearch = t.title.toLowerCase().includes(query) || 
+                              t.explanation.toLowerCase().includes(query) ||
+                              t.code.toLowerCase().includes(query);
+        return matchesCat && matchesSearch;
+      });
+      renderTopics(filtered);
+    }
+
+    function runHtmlSandbox() {
+      const code = document.getElementById('html-sandbox-editor').value;
+      const preview = document.getElementById('html-sandbox-preview');
+      preview.srcdoc = code;
+    }
+
+    function resetHtmlSandbox() {
+      document.getElementById('html-sandbox-editor').value = `<div style="padding: 20px; text-align: center; background: #0f172a; border-radius: 12px; color: #fff;">
+  <h2 style="color: #f97316; margin-top: 0;">✨ Interactive HTML Preview</h2>
+  <p style="color: #cbd5e1; font-size: 14px;">Edit the code on the left and see changes live!</p>
+  <button style="background: #f97316; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;" onclick="alert('HTML Sandbox Works!')">
+    Click Me!
+  </button>
+</div>`;
+      runHtmlSandbox();
+      showToast('Sandbox reset to default');
+    }
+
+    function loadIntoSandbox(code) {
+      // Decode HTML entities
+      const txt = document.createElement('textarea');
+      txt.innerHTML = code;
+      document.getElementById('html-sandbox-editor').value = txt.value;
+      runHtmlSandbox();
+      document.getElementById('html-sandbox-editor').scrollIntoView({ behavior: 'smooth' });
+      showToast('Loaded snippet into Live Sandbox!');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTopics(window.htmlTopics);
+      ProgressTracker.updateUI('html');
+      runHtmlSandbox();
+
+      document.getElementById('topic-search')?.addEventListener('input', applyFilterAndSearch);
+      document.getElementById('html-sandbox-editor')?.addEventListener('input', () => {
+        runHtmlSandbox();
+      });
+    });
+  </script>
+</body>
+</html>

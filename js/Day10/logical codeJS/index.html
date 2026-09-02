@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevMaster Hub - Interactive Full-Stack Learning Portal</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="assests/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+
+  <!-- Universal Header / Navbar -->
+  <header class="sticky top-0 z-40 glass-panel border-b border-slate-800/80 bg-slate-950/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform">
+          &lt;/&gt;
+        </div>
+        <div>
+          <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">DevMaster</span>
+          <span class="text-[10px] font-mono block text-indigo-400 font-semibold -mt-1 tracking-widest uppercase">Learning Hub</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 font-medium text-sm">
+        <a href="index.html" class="px-4 py-2 rounded-lg text-slate-200 hover:text-white hover:bg-slate-800/50 transition">Dashboard</a>
+        <a href="html.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-orange-400 hover:bg-orange-950/30 transition flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-orange-500"></span> HTML (25+)
+        </a>
+        <a href="css.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-sky-400 hover:bg-sky-950/30 transition flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-sky-500"></span> CSS (25+)
+        </a>
+        <a href="javascript.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-amber-950/30 transition flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span> JavaScript (25+)
+        </a>
+        <a href="tailwind.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-teal-400 hover:bg-teal-950/30 transition flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-teal-400"></span> Tailwind (25+)
+        </a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono text-indigo-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span id="global-total-badge">100+ Topics Total</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+    
+    <!-- Hero Banner -->
+    <div class="relative rounded-3xl overflow-hidden glass-panel border border-slate-800 p-8 sm:p-12 text-center bg-gradient-to-b from-indigo-950/40 via-slate-900/60 to-slate-950">
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold tracking-wide">
+          <span>🚀 4 Specialized Mastery Pages &bull; 100+ Interactive Topics</span>
+        </div>
+        
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          Master Modern Web Development <span class="text-gradient-primary">Interactively</span>
+        </h1>
+        
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+          Explore dedicated hands-on sandboxes with live rendering, visual builders, executable code runners, quizzes, and instant progress tracking for HTML, CSS, JavaScript, and Tailwind CSS.
+        </p>
+
+        <!-- Quick Stats Banner -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 max-w-2xl mx-auto">
+          <div class="glass-card p-4 rounded-2xl text-center">
+            <div class="text-2xl font-black text-orange-400">25+</div>
+            <div class="text-xs text-slate-400 font-medium mt-0.5">HTML Topics</div>
+          </div>
+          <div class="glass-card p-4 rounded-2xl text-center">
+            <div class="text-2xl font-black text-sky-400">25+</div>
+            <div class="text-xs text-slate-400 font-medium mt-0.5">CSS Topics</div>
+          </div>
+          <div class="glass-card p-4 rounded-2xl text-center">
+            <div class="text-2xl font-black text-amber-400">25+</div>
+            <div class="text-xs text-slate-400 font-medium mt-0.5">JavaScript Topics</div>
+          </div>
+          <div class="glass-card p-4 rounded-2xl text-center">
+            <div class="text-2xl font-black text-teal-400">25+</div>
+            <div class="text-xs text-slate-400 font-medium mt-0.5">Tailwind Topics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Track Cards Grid -->
+    <div class="space-y-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-white tracking-tight">Select Learning Track</h2>
+          <p class="text-sm text-slate-400">Each track includes separate interactive sandboxes, cheat sheets, and quizzes.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Track 1: HTML -->
+        <a href="html.html" class="glass-card p-6 sm:p-8 rounded-2xl border border-orange-500/20 hover:border-orange-500/60 group block relative overflow-hidden transition-all">
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 font-black text-2xl group-hover:scale-110 transition-transform">
+              &lt;/&gt;
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-500/10 text-orange-300 border border-orange-500/20">
+              25 Topics Active
+            </span>
+          </div>
+          <div class="mt-6 space-y-2">
+            <h3 class="text-2xl font-bold text-white group-hover:text-orange-400 transition">HTML5 Mastery</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Semantics, modern forms, Dialog & Popover API, audio/video multimedia, SEO meta tags, SVG vector graphics, and accessible ARIA roles.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-medium">
+            <span>Includes Live HTML Sandbox &amp; Quiz</span>
+            <span class="text-orange-400 font-bold group-hover:translate-x-1 transition-transform flex items-center gap-1">
+              Explore HTML &rarr;
+            </span>
+          </div>
+        </a>
+
+        <!-- Track 2: CSS -->
+        <a href="css.html" class="glass-card p-6 sm:p-8 rounded-2xl border border-sky-500/20 hover:border-sky-500/60 group block relative overflow-hidden transition-all">
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 font-black text-2xl group-hover:scale-110 transition-transform">
+              #
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-300 border border-sky-500/20">
+              25 Topics Active
+            </span>
+          </div>
+          <div class="mt-6 space-y-2">
+            <h3 class="text-2xl font-bold text-white group-hover:text-sky-400 transition">Modern CSS &amp; Layouts</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Flexbox, CSS Grid, 2D/3D Transforms, Glassmorphism, Keyframe animations, Container queries, Subgrid, :has() parent selector, and fluid typography.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-medium">
+            <span>Includes Interactive Visual Styler</span>
+            <span class="text-sky-400 font-bold group-hover:translate-x-1 transition-transform flex items-center gap-1">
+              Explore CSS &rarr;
+            </span>
+          </div>
+        </a>
+
+        <!-- Track 3: JavaScript -->
+        <a href="javascript.html" class="glass-card p-6 sm:p-8 rounded-2xl border border-amber-500/20 hover:border-amber-500/60 group block relative overflow-hidden transition-all">
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-black text-2xl group-hover:scale-110 transition-transform">
+              JS
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-300 border border-amber-500/20">
+              25 Topics Active
+            </span>
+          </div>
+          <div class="mt-6 space-y-2">
+            <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition">JavaScript &amp; Logic Engine</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Scope, Hoisting, Arrow functions, Destructuring, ES6 Classes, Promises, Async/Await, Array algorithms (Second Highest, Factorial), and DOM mastery.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-medium">
+            <span>Includes In-Browser Code Runner</span>
+            <span class="text-amber-400 font-bold group-hover:translate-x-1 transition-transform flex items-center gap-1">
+              Explore JavaScript &rarr;
+            </span>
+          </div>
+        </a>
+
+        <!-- Track 4: Tailwind CSS -->
+        <a href="tailwind.html" class="glass-card p-6 sm:p-8 rounded-2xl border border-teal-500/20 hover:border-teal-500/60 group block relative overflow-hidden transition-all">
+          <div class="flex items-start justify-between">
+            <div class="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 font-black text-2xl group-hover:scale-110 transition-transform">
+              ≈
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-300 border border-teal-500/20">
+              25 Topics Active
+            </span>
+          </div>
+          <div class="mt-6 space-y-2">
+            <h3 class="text-2xl font-bold text-white group-hover:text-teal-400 transition">Tailwind CSS Mastery</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Utility-first workflow, Responsive prefixes, Hover/Focus states, Dark mode, Gradients, Glassmorphism blur, Arbitrary values, and Keyframe animations.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 font-medium">
+            <span>Includes Real-Time Class Styler</span>
+            <span class="text-teal-400 font-bold group-hover:translate-x-1 transition-transform flex items-center gap-1">
+              Explore Tailwind &rarr;
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Featured User Practice Lab Banner -->
+    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-slate-900/90 to-slate-950 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-2xl shadow-amber-500/10">
+      <div class="space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-xs font-bold">
+          <span>🌟 YOUR CUSTOM WORKSPACE EXERCISES</span>
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+          Practiced Code Lab (<code class="text-amber-400 font-mono text-xl">index2.js</code> &amp; <code class="text-amber-400 font-mono text-xl">index.js</code>)
+        </h3>
+        <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
+          All 12 of your practiced ES6 exercises (Scope, Redeclaration, Reassignment, Hoisting, TDZ, Arrow Functions, Array &amp; Object Destructuring, Rest &amp; Spread, Template strings, and Student Classes) along with your logic algorithms (Even/Odd, Sum, Factorial, and Second Highest) are loaded directly into the interactive code runner!
+        </p>
+        <div class="flex flex-wrap gap-2 pt-1 text-xs">
+          <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">1. Scope</span>
+          <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">2. Arrow Functions</span>
+          <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">3. Destructuring</span>
+          <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">4. Class Data (Ravi &amp; Priya)</span>
+          <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 font-mono">5. Second Highest Algorithm</span>
+        </div>
+      </div>
+
+      <div class="shrink-0 w-full lg:w-auto">
+        <a href="javascript.html" class="inline-flex items-center justify-center gap-2 w-full lg:w-auto px-6 py-3.5 rounded-2xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-sm shadow-xl shadow-amber-400/20 hover:scale-105 transition-all">
+          <span>⚡ Launch Practice Lab</span>
+          <span class="text-base">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Global Learning Progress Section -->
+    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h3 class="text-xl font-bold text-white">Your Overall Progress Tracker</h3>
+          <p class="text-xs text-slate-400 mt-0.5">Completed topics are saved automatically in your browser.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="localStorage.removeItem('devmaster_progress'); location.reload();" class="text-xs text-slate-400 hover:text-rose-400 px-3 py-1.5 rounded-lg border border-slate-800 hover:border-rose-500/30 transition">
+            Reset Progress
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+        <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1">
+            <span>HTML</span>
+            <span id="home-html-stat">0 / 25</span>
+          </div>
+          <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div id="home-html-bar" class="bg-orange-500 h-full w-0 transition-all duration-500"></div>
+          </div>
+        </div>
+
+        <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1">
+            <span>CSS</span>
+            <span id="home-css-stat">0 / 25</span>
+          </div>
+          <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div id="home-css-bar" class="bg-sky-500 h-full w-0 transition-all duration-500"></div>
+          </div>
+        </div>
+
+        <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1">
+            <span>JavaScript</span>
+            <span id="home-js-stat">0 / 25</span>
+          </div>
+          <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div id="home-js-bar" class="bg-amber-400 h-full w-0 transition-all duration-500"></div>
+          </div>
+        </div>
+
+        <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800">
+          <div class="flex justify-between text-xs font-medium text-slate-300 mb-1">
+            <span>Tailwind</span>
+            <span id="home-tw-stat">0 / 25</span>
+          </div>
+          <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div id="home-tw-bar" class="bg-teal-400 h-full w-0 transition-all duration-500"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-8 text-center text-xs text-slate-500 mt-12">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p>&copy; 2026 DevMaster Learning Hub &bull; 100+ Interactive Web Development Topics</p>
+      <div class="flex justify-center gap-4 text-slate-400">
+        <a href="html.html" class="hover:text-orange-400">HTML (25)</a>
+        <span>&bull;</span>
+        <a href="css.html" class="hover:text-sky-400">CSS (25)</a>
+        <span>&bull;</span>
+        <a href="javascript.html" class="hover:text-amber-400">JavaScript (25)</a>
+        <span>&bull;</span>
+        <a href="tailwind.html" class="hover:text-teal-400">Tailwind CSS (25)</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assests/js/common.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const progress = ProgressTracker.getProgress();
+      const tracks = [
+        { key: 'html', statId: 'home-html-stat', barId: 'home-html-bar', total: 25 },
+        { key: 'css', statId: 'home-css-stat', barId: 'home-css-bar', total: 25 },
+        { key: 'javascript', statId: 'home-js-stat', barId: 'home-js-bar', total: 25 },
+        { key: 'tailwind', statId: 'home-tw-stat', barId: 'home-tw-bar', total: 25 }
+      ];
+
+      tracks.forEach(t => {
+        const count = progress[t.key]?.length || 0;
+        const pct = Math.round((count / t.total) * 100);
+        document.getElementById(t.statId).textContent = `${count} / ${t.total} (${pct}%)`;
+        document.getElementById(t.barId).style.width = `${pct}%`;
+      });
+    });
+  </script>
+</body>
+</html>

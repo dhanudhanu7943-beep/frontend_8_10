@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Mastery & Practice Lab - 25+ Topics & Live Code Runner</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assests/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- Universal Header / Navbar -->
+  <header class="sticky top-0 z-40 glass-panel border-b border-slate-800/80 bg-slate-950/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-black text-lg group-hover:scale-105 transition-transform">
+          JS
+        </div>
+        <div>
+          <span class="font-extrabold text-lg tracking-tight text-white">DevMaster</span>
+          <span class="text-[10px] font-mono block text-amber-400 font-semibold -mt-1 tracking-widest uppercase">JavaScript Track &amp; Lab</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 font-medium text-sm">
+        <a href="index.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition">Dashboard</a>
+        <a href="html.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-orange-400 hover:bg-orange-950/30 transition">HTML (25)</a>
+        <a href="css.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-sky-400 hover:bg-sky-950/30 transition">CSS (25)</a>
+        <a href="javascript.html" class="px-4 py-2 rounded-lg text-amber-400 bg-amber-950/40 border-b-2 border-amber-500 transition">JavaScript &amp; Lab (25)</a>
+        <a href="tailwind.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-teal-400 hover:bg-teal-950/30 transition">Tailwind (25)</a>
+      </nav>
+
+      <!-- Quiz Button -->
+      <div class="flex items-center gap-3">
+        <button onclick="openQuizModal('JavaScript', window.jsQuiz)" class="px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-lg shadow-amber-500/20 transition flex items-center gap-2">
+          <span>🎯 Take Quiz</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Hero / Progress Header -->
+    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-amber-500/20 bg-gradient-to-r from-amber-950/30 via-slate-900 to-slate-950 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold">
+          <span>⚡ Integrated with your index2.js &amp; index.js practice code</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-black text-white">JavaScript Mastery &amp; Practice Lab</h1>
+        <p class="text-sm text-slate-300 max-w-xl">
+          Execute and test your practiced Scope, Hoisting, Arrow Functions, Array/Object Destructuring, Classes, Odd/Even, Factorial, and Second Highest algorithms live in the console.
+        </p>
+      </div>
+
+      <!-- Live Track Progress Widget -->
+      <div class="glass-card p-4 rounded-2xl border border-slate-800 w-full md:w-64 space-y-2">
+        <div class="flex justify-between text-xs font-semibold">
+          <span class="text-slate-400">Track Progress</span>
+          <span id="progress-percentage" class="text-amber-400 font-mono">0%</span>
+        </div>
+        <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+          <div id="progress-bar-fill" class="bg-amber-400 h-full w-0 transition-all duration-500"></div>
+        </div>
+        <div class="text-[11px] text-slate-400 text-right">
+          Completed: <span id="completed-count" class="font-bold text-white">0 / 25</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live In-Browser JavaScript Code Runner & Console -->
+    <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+      <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between flex-wrap gap-3">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+          <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+          <span class="text-xs font-mono text-slate-300 font-bold ml-2">💻 Interactive JS Code Execution Runner</span>
+        </div>
+
+        <!-- Quick Loader Dropdown for User Practice Files -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <label for="practice-select" class="text-xs text-amber-400 font-semibold flex items-center gap-1">
+            <span>🌟 Practice Presets:</span>
+          </label>
+          <select id="practice-select" onchange="loadPracticePreset(this.value)" class="bg-slate-950 border border-amber-500/40 text-amber-300 rounded-lg px-3 py-1.5 text-xs font-mono focus:ring-2 focus:ring-amber-400 focus:outline-none">
+            <option value="full-index2">🌟 Full index2.js (All 12 Exercises)</option>
+            <option value="full-index1">🌟 Full index.js (Algorithms &amp; Loops)</option>
+            <option value="scope">1. Scope (var/let/const)</option>
+            <option value="arrow">2. Arrow Functions (Explicit &amp; Implicit)</option>
+            <option value="destructuring">3. Array &amp; Object Destructuring</option>
+            <option value="classes">4. Student Class (Ravi &amp; Priya)</option>
+          </select>
+
+          <button onclick="clearJsConsole()" class="text-xs text-slate-400 hover:text-white px-2.5 py-1.5 rounded bg-slate-800 hover:bg-slate-700 transition">
+            Clear
+          </button>
+          <button onclick="runCustomJsCode()" class="text-xs text-slate-950 px-3.5 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-300 font-bold shadow-md shadow-amber-400/20 transition flex items-center gap-1.5">
+            ▶ Run Code (Ctrl+Enter)
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-800 min-h-[320px]">
+        <!-- Code Editor Area -->
+        <div class="p-4 bg-slate-950 flex flex-col">
+          <label class="text-xs font-mono text-slate-400 mb-2 flex justify-between">
+            <span>JavaScript Source Code:</span>
+            <span class="text-[10px] text-amber-400">console.log outputs to right pane</span>
+          </label>
+          <textarea id="js-code-editor" class="w-full flex-1 bg-slate-900 text-amber-200 p-3 rounded-xl border border-slate-800 font-mono text-xs focus:ring-2 focus:ring-amber-500 focus:outline-none resize-y min-h-[220px]" spellcheck="false"></textarea>
+        </div>
+
+        <!-- Live Output Console Pane -->
+        <div class="p-4 bg-slate-950/80 flex flex-col">
+          <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-2">
+            <span>Console Output:</span>
+            <span id="js-exec-time" class="text-[10px] text-slate-500">Ready</span>
+          </div>
+          <div id="js-console-output" class="w-full flex-1 bg-slate-900 p-3 rounded-xl border border-slate-800 font-mono text-xs overflow-y-auto min-h-[220px] max-h-[360px] space-y-1">
+            <div class="text-slate-500 italic">Click "▶ Run Code" above to execute...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search & Filters -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="relative w-full sm:w-80">
+        <input type="text" id="topic-search" placeholder="Search topics or practice code..." class="w-full bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50">
+        <span class="absolute right-3 top-3 text-slate-500 text-xs">🔍</span>
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0" id="filter-pills">
+        <button onclick="filterJsTopics('all')" class="category-pill active px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 transition">All (25)</button>
+        <button onclick="filterJsTopics('Practice (index2.js)')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-amber-300 border border-amber-500/30 hover:bg-slate-800 transition">🌟 index2.js Practice</button>
+        <button onclick="filterJsTopics('Practice (index.js)')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-amber-300 border border-amber-500/30 hover:bg-slate-800 transition">🌟 index.js Practice</button>
+        <button onclick="filterJsTopics('Array Methods')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Arrays</button>
+        <button onclick="filterJsTopics('Asynchronous')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Async</button>
+        <button onclick="filterJsTopics('DOM')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">DOM</button>
+      </div>
+    </div>
+
+    <!-- Topics Grid -->
+    <div id="js-topics-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Dynamic JS cards injected via JS -->
+    </div>
+
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-8 text-center text-xs text-slate-500 mt-12">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p>&copy; 2026 DevMaster Learning Hub &bull; 25+ Comprehensive JavaScript Topics</p>
+      <div class="flex justify-center gap-4 text-slate-400">
+        <a href="index.html" class="hover:text-white">Dashboard</a>
+        <span>&bull;</span>
+        <a href="html.html" class="hover:text-orange-400">HTML (25)</a>
+        <span>&bull;</span>
+        <a href="css.html" class="hover:text-sky-400">CSS (25)</a>
+        <span>&bull;</span>
+        <a href="tailwind.html" class="hover:text-teal-400">Tailwind (25)</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assests/js/common.js"></script>
+  <script src="assests/js/js-data.js"></script>
+  <script>
+    window.topicsData = window.jsTopics;
+    let activeCategory = 'all';
+
+    function renderTopics(topics) {
+      const container = document.getElementById('js-topics-container');
+      if (!container) return;
+
+      if (topics.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-12 glass-panel rounded-2xl">
+            <p class="text-slate-400 text-sm">No topics found matching your search.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = topics.map(t => {
+        const isDone = ProgressTracker.isCompleted('javascript', t.id);
+        const isPractice = t.isPractice || t.category.includes('index');
+        return `
+          <div class="glass-card p-6 rounded-2xl border ${isPractice ? 'border-amber-500/30 shadow-lg shadow-amber-500/5' : isDone ? 'border-emerald-500/40 bg-emerald-950/10' : 'border-slate-800'} flex flex-col justify-between space-y-4" id="card-${t.id}">
+            <div>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2 mb-1 flex-wrap">
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded ${isPractice ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40' : 'bg-amber-500/10 text-amber-400 border border-amber-500/20'}">${t.category}</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded ${t.difficulty === 'Beginner' ? 'bg-emerald-500/10 text-emerald-400' : t.difficulty === 'Intermediate' ? 'bg-amber-500/10 text-amber-400' : 'bg-purple-500/10 text-purple-400'}">${t.difficulty}</span>
+                    ${isPractice ? `<span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-400 text-slate-950 font-extrabold">YOUR PRACTICE CODE</span>` : ''}
+                  </div>
+                  <h3 class="text-lg font-bold text-white">${t.title}</h3>
+                </div>
+                <!-- Checkbox -->
+                <button onclick="toggleTopicDone('${t.id}')" title="Mark as Completed" class="w-8 h-8 rounded-xl border flex items-center justify-center transition shrink-0 ${isDone ? 'bg-emerald-500 border-emerald-400 text-slate-950' : 'border-slate-700 bg-slate-900 text-slate-500 hover:border-slate-500'}">
+                  ${isDone ? '✓' : ''}
+                </button>
+              </div>
+
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">${t.explanation}</p>
+            </div>
+
+            <!-- Code Block with Copy & Run -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                <span>${isPractice ? 'Your Practiced Code:' : 'JavaScript Code:'}</span>
+                <div class="flex gap-2">
+                  <button onclick="loadAndRunInConsole(\`${escapeHTML(t.code)}\`)" class="text-amber-400 hover:text-amber-300 font-bold">
+                    ⚡ Load &amp; Run
+                  </button>
+                  <button onclick="copyToClipboard(\`${escapeHTML(t.code)}\`, this)" class="hover:text-white">
+                    📋 Copy
+                  </button>
+                </div>
+              </div>
+              <pre class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs font-mono text-amber-200 overflow-x-auto leading-relaxed"><code>${escapeHTML(t.code)}</code></pre>
+            </div>
+
+            <!-- Pro Tip -->
+            <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-slate-400">
+              <strong class="text-amber-400">Pro-Tip:</strong> ${t.tips}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleTopicDone(id) {
+      ProgressTracker.toggleTopic('javascript', id);
+      applyFilterAndSearch();
+    }
+
+    function filterJsTopics(category) {
+      activeCategory = category;
+      document.querySelectorAll('#filter-pills .category-pill').forEach(btn => {
+        if ((category === 'all' && btn.textContent.includes('All')) || btn.textContent.includes(category) || (category.includes('index2') && btn.textContent.includes('index2')) || (category.includes('index.') && btn.textContent.includes('index.'))) {
+          btn.className = 'category-pill active px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 transition';
+        } else {
+          btn.className = 'category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition';
+        }
+      });
+      applyFilterAndSearch();
+    }
+
+    function applyFilterAndSearch() {
+      const query = document.getElementById('topic-search')?.value.toLowerCase() || '';
+      const filtered = window.jsTopics.filter(t => {
+        const matchesCat = activeCategory === 'all' || t.category === activeCategory;
+        const matchesSearch = t.title.toLowerCase().includes(query) || 
+                              t.explanation.toLowerCase().includes(query) ||
+                              t.code.toLowerCase().includes(query);
+        return matchesCat && matchesSearch;
+      });
+      renderTopics(filtered);
+    }
+
+    // In-Browser JS Console Runner
+    function runCustomJsCode() {
+      const code = document.getElementById('js-code-editor').value;
+      const consoleOutput = document.getElementById('js-console-output');
+      consoleOutput.innerHTML = '';
+      
+      const startTime = performance.now();
+      const logs = [];
+
+      // Intercept console functions safely
+      const originalLog = console.log;
+      const originalError = console.error;
+      const originalWarn = console.warn;
+
+      console.log = (...args) => {
+        logs.push({ type: 'log', text: args.map(formatConsoleArg).join(' ') });
+        originalLog.apply(console, args);
+      };
+
+      console.error = (...args) => {
+        logs.push({ type: 'error', text: args.map(formatConsoleArg).join(' ') });
+        originalError.apply(console, args);
+      };
+
+      console.warn = (...args) => {
+        logs.push({ type: 'warn', text: args.map(formatConsoleArg).join(' ') });
+        originalWarn.apply(console, args);
+      };
+
+      try {
+        const runner = new Function(code);
+        runner();
+        const endTime = performance.now();
+        document.getElementById('js-exec-time').textContent = `Done in ${(endTime - startTime).toFixed(1)}ms`;
+      } catch (err) {
+        logs.push({ type: 'error', text: `${err.name}: ${err.message}` });
+        document.getElementById('js-exec-time').textContent = 'Execution Error';
+      } finally {
+        console.log = originalLog;
+        console.error = originalError;
+        console.warn = originalWarn;
+      }
+
+      if (logs.length === 0) {
+        consoleOutput.innerHTML = `<div class="text-slate-500 italic">Code executed with no console output.</div>`;
+      } else {
+        consoleOutput.innerHTML = logs.map(l => {
+          if (l.type === 'error') {
+            return `<div class="console-line-error">❌ ${escapeHTML(l.text)}</div>`;
+          } else if (l.type === 'warn') {
+            return `<div class="console-line-warn">⚠️ ${escapeHTML(l.text)}</div>`;
+          }
+          return `<div class="console-line-log">&gt; ${escapeHTML(l.text)}</div>`;
+        }).join('');
+      }
+    }
+
+    function formatConsoleArg(arg) {
+      if (typeof arg === 'object') {
+        try {
+          return JSON.stringify(arg, null, 2);
+        } catch (e) {
+          return String(arg);
+        }
+      }
+      return String(arg);
+    }
+
+    function clearJsConsole() {
+      document.getElementById('js-console-output').innerHTML = '<div class="text-slate-500 italic">Console cleared.</div>';
+      document.getElementById('js-exec-time').textContent = 'Cleared';
+    }
+
+    function loadAndRunInConsole(code) {
+      const txt = document.createElement('textarea');
+      txt.innerHTML = code;
+      document.getElementById('js-code-editor').value = txt.value;
+      runCustomJsCode();
+      document.getElementById('js-code-editor').scrollIntoView({ behavior: 'smooth' });
+      showToast('Loaded & Executed in Console!');
+    }
+
+    function loadPracticePreset(key) {
+      const snippet = window.userPracticeSnippets[key];
+      if (snippet) {
+        document.getElementById('js-code-editor').value = snippet.code;
+        runCustomJsCode();
+        showToast(`Loaded ${snippet.name}!`);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTopics(window.jsTopics);
+      ProgressTracker.updateUI('javascript');
+
+      // Load initial full index2.js practice suite
+      loadPracticePreset('full-index2');
+
+      document.getElementById('topic-search')?.addEventListener('input', applyFilterAndSearch);
+
+      // Keyboard shortcut Ctrl+Enter to run code
+      document.getElementById('js-code-editor')?.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+          e.preventDefault();
+          runCustomJsCode();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

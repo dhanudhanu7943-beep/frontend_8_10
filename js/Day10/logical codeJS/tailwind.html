@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Mastery - 25+ Topics & Live Utility Styler</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assests/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-teal-500 selection:text-slate-950">
+
+  <!-- Universal Header / Navbar -->
+  <header class="sticky top-0 z-40 glass-panel border-b border-slate-800/80 bg-slate-950/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-400 font-black text-lg group-hover:scale-105 transition-transform">
+          ≈
+        </div>
+        <div>
+          <span class="font-extrabold text-lg tracking-tight text-white">DevMaster</span>
+          <span class="text-[10px] font-mono block text-teal-400 font-semibold -mt-1 tracking-widest uppercase">Tailwind Track</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 font-medium text-sm">
+        <a href="index.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition">Dashboard</a>
+        <a href="html.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-orange-400 hover:bg-orange-950/30 transition">HTML (25)</a>
+        <a href="css.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-sky-400 hover:bg-sky-950/30 transition">CSS (25)</a>
+        <a href="javascript.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-amber-950/30 transition">JavaScript (25)</a>
+        <a href="tailwind.html" class="px-4 py-2 rounded-lg text-teal-400 bg-teal-950/40 border-b-2 border-teal-500 transition">Tailwind (25)</a>
+      </nav>
+
+      <!-- Quiz Button -->
+      <div class="flex items-center gap-3">
+        <button onclick="openQuizModal('Tailwind CSS', window.tailwindQuiz)" class="px-4 py-2 rounded-xl text-xs font-bold bg-teal-500 hover:bg-teal-400 text-slate-950 shadow-lg shadow-teal-500/20 transition flex items-center gap-2">
+          <span>🎯 Take Quiz</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Hero / Progress Header -->
+    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-teal-500/20 bg-gradient-to-r from-teal-950/30 via-slate-900 to-slate-950 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-semibold">
+          <span>💎 25 Essential Tailwind Topics</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-black text-white">Tailwind CSS Mastery Hub</h1>
+        <p class="text-sm text-slate-300 max-w-xl">
+          Build sleek modern UI components with utility classes, responsive breakpoints, state variants, arbitrary brackets, gradients, and built-in animations.
+        </p>
+      </div>
+
+      <!-- Live Track Progress Widget -->
+      <div class="glass-card p-4 rounded-2xl border border-slate-800 w-full md:w-64 space-y-2">
+        <div class="flex justify-between text-xs font-semibold">
+          <span class="text-slate-400">Track Progress</span>
+          <span id="progress-percentage" class="text-teal-400 font-mono">0%</span>
+        </div>
+        <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+          <div id="progress-bar-fill" class="bg-teal-400 h-full w-0 transition-all duration-500"></div>
+        </div>
+        <div class="text-[11px] text-slate-400 text-right">
+          Completed: <span id="completed-count" class="font-bold text-white">0 / 25</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Interactive Tailwind Utility Styler Sandbox -->
+    <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+      <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+          <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+          <span class="text-xs font-mono text-slate-300 font-bold ml-2">⚡ Real-Time Tailwind Class Styler</span>
+        </div>
+        <div class="flex items-center gap-2 text-xs text-slate-400">
+          <span>Type or toggle classes to restyle the card below:</span>
+        </div>
+      </div>
+
+      <div class="p-6 space-y-6">
+        <!-- Class input bar -->
+        <div>
+          <label class="text-xs font-mono text-slate-300 block mb-2">Active Tailwind Classes on Preview Card:</label>
+          <div class="flex gap-2">
+            <input type="text" id="tw-live-input" value="p-6 bg-gradient-to-r from-indigo-900 to-slate-900 rounded-2xl border border-indigo-500/40 shadow-2xl shadow-indigo-500/20 text-white flex items-center justify-between transition-all duration-300 hover:scale-[1.02]" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 font-mono text-xs text-teal-300 focus:ring-2 focus:ring-teal-500 focus:outline-none">
+            <button onclick="resetTwStyler()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-medium transition shrink-0">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Toggle Badges -->
+        <div class="flex flex-wrap gap-2 items-center text-xs">
+          <span class="text-slate-400 font-mono text-[11px] mr-1">Quick Presets:</span>
+          <button onclick="applyTwPreset('glass')" class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-teal-500/40 transition">✨ Glassmorphism</button>
+          <button onclick="applyTwPreset('gradient')" class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-teal-500/40 transition">🌈 Neon Gradient</button>
+          <button onclick="applyTwPreset('minimal')" class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-teal-500/40 transition">🖤 Dark Minimal</button>
+          <button onclick="applyTwPreset('cyber')" class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-teal-500/40 transition">🚀 Cyberpunk</button>
+        </div>
+
+        <!-- Live Component Stage -->
+        <div class="p-8 bg-slate-950/80 rounded-2xl border border-slate-900 flex items-center justify-center min-h-[160px]">
+          <div id="tw-live-target" class="p-6 bg-gradient-to-r from-indigo-900 to-slate-900 rounded-2xl border border-indigo-500/40 shadow-2xl shadow-indigo-500/20 text-white flex items-center justify-between transition-all duration-300 hover:scale-[1.02] w-full max-w-lg">
+            <div class="flex items-center gap-4">
+              <div class="size-12 rounded-xl bg-teal-400 text-slate-950 font-black flex items-center justify-center text-xl shadow-md">
+                ⚡
+              </div>
+              <div>
+                <h4 class="text-base font-bold text-white">Live Tailwind Component</h4>
+                <p class="text-xs text-slate-300">Changes apply instantaneously as you type classes.</p>
+              </div>
+            </div>
+            <button class="px-4 py-2 rounded-lg bg-teal-400 hover:bg-teal-300 text-slate-950 text-xs font-bold shadow-md transition">
+              Action
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search & Filters -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="relative w-full sm:w-80">
+        <input type="text" id="topic-search" placeholder="Search 25+ Tailwind topics..." class="w-full bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500/50">
+        <span class="absolute right-3 top-3 text-slate-500 text-xs">🔍</span>
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0" id="filter-pills">
+        <button onclick="filterTwTopics('all')" class="category-pill active px-3 py-1.5 rounded-lg text-xs font-semibold bg-teal-500 text-slate-950 transition">All (25)</button>
+        <button onclick="filterTwTopics('Fundamentals')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Fundamentals</button>
+        <button onclick="filterTwTopics('Layout')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Layout</button>
+        <button onclick="filterTwTopics('Styling')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Styling</button>
+        <button onclick="filterTwTopics('Interactivity')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Interactivity</button>
+        <button onclick="filterTwTopics('Animation')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Animation</button>
+      </div>
+    </div>
+
+    <!-- Topics Grid -->
+    <div id="tailwind-topics-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Dynamic Tailwind cards injected via JS -->
+    </div>
+
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-8 text-center text-xs text-slate-500 mt-12">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p>&copy; 2026 DevMaster Learning Hub &bull; 25+ Comprehensive Tailwind CSS Topics</p>
+      <div class="flex justify-center gap-4 text-slate-400">
+        <a href="index.html" class="hover:text-white">Dashboard</a>
+        <span>&bull;</span>
+        <a href="html.html" class="hover:text-orange-400">HTML (25)</a>
+        <span>&bull;</span>
+        <a href="css.html" class="hover:text-sky-400">CSS (25)</a>
+        <span>&bull;</span>
+        <a href="javascript.html" class="hover:text-amber-400">JavaScript (25)</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assests/js/common.js"></script>
+  <script src="assests/js/tailwind-data.js"></script>
+  <script>
+    window.topicsData = window.tailwindTopics;
+    let activeCategory = 'all';
+
+    function renderTopics(topics) {
+      const container = document.getElementById('tailwind-topics-container');
+      if (!container) return;
+
+      if (topics.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-12 glass-panel rounded-2xl">
+            <p class="text-slate-400 text-sm">No topics found matching your search.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = topics.map(t => {
+        const isDone = ProgressTracker.isCompleted('tailwind', t.id);
+        return `
+          <div class="glass-card p-6 rounded-2xl border ${isDone ? 'border-emerald-500/40 bg-emerald-950/10' : 'border-slate-800'} flex flex-col justify-between space-y-4" id="card-${t.id}">
+            <div>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">${t.category}</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded ${t.difficulty === 'Beginner' ? 'bg-emerald-500/10 text-emerald-400' : t.difficulty === 'Intermediate' ? 'bg-amber-500/10 text-amber-400' : 'bg-purple-500/10 text-purple-400'}">${t.difficulty}</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white">${t.title}</h3>
+                </div>
+                <!-- Checkbox -->
+                <button onclick="toggleTopicDone('${t.id}')" title="Mark as Completed" class="w-8 h-8 rounded-xl border flex items-center justify-center transition shrink-0 ${isDone ? 'bg-emerald-500 border-emerald-400 text-slate-950' : 'border-slate-700 bg-slate-900 text-slate-500 hover:border-slate-500'}">
+                  ${isDone ? '✓' : ''}
+                </button>
+              </div>
+
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">${t.explanation}</p>
+            </div>
+
+            <!-- Code Block with Copy -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                <span>HTML with Tailwind Classes:</span>
+                <div class="flex gap-2">
+                  <button onclick="loadClassesToStyler('${t.classes}')" class="text-teal-400 hover:text-teal-300">
+                    ⚡ Styler
+                  </button>
+                  <button onclick="copyToClipboard(\`${escapeHTML(t.code)}\`, this)" class="hover:text-white">
+                    📋 Copy
+                  </button>
+                </div>
+              </div>
+              <pre class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs font-mono text-teal-200 overflow-x-auto leading-relaxed"><code>${escapeHTML(t.code)}</code></pre>
+            </div>
+
+            <!-- Live Mini Preview -->
+            <div>
+              <span class="text-[11px] text-slate-400 font-mono block mb-1">Rendered Component:</span>
+              <div class="p-3 bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
+                <div class="${t.classes}">
+                  ${t.code}
+                </div>
+              </div>
+            </div>
+
+            <!-- Pro Tip -->
+            <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-slate-400">
+              <strong class="text-teal-400">Pro-Tip:</strong> ${t.tips}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleTopicDone(id) {
+      ProgressTracker.toggleTopic('tailwind', id);
+      applyFilterAndSearch();
+    }
+
+    function filterTwTopics(category) {
+      activeCategory = category;
+      document.querySelectorAll('#filter-pills .category-pill').forEach(btn => {
+        if ((category === 'all' && btn.textContent.includes('All')) || btn.textContent === category) {
+          btn.className = 'category-pill active px-3 py-1.5 rounded-lg text-xs font-semibold bg-teal-500 text-slate-950 transition';
+        } else {
+          btn.className = 'category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition';
+        }
+      });
+      applyFilterAndSearch();
+    }
+
+    function applyFilterAndSearch() {
+      const query = document.getElementById('topic-search')?.value.toLowerCase() || '';
+      const filtered = window.tailwindTopics.filter(t => {
+        const matchesCat = activeCategory === 'all' || t.category === activeCategory;
+        const matchesSearch = t.title.toLowerCase().includes(query) || 
+                              t.explanation.toLowerCase().includes(query) ||
+                              t.code.toLowerCase().includes(query);
+        return matchesCat && matchesSearch;
+      });
+      renderTopics(filtered);
+    }
+
+    function updateLiveStyler() {
+      const val = document.getElementById('tw-live-input').value;
+      const target = document.getElementById('tw-live-target');
+      target.className = val + ' w-full max-w-lg';
+    }
+
+    function applyTwPreset(preset) {
+      const input = document.getElementById('tw-live-input');
+      if (preset === 'glass') {
+        input.value = 'p-6 bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl text-white flex items-center justify-between';
+      } else if (preset === 'gradient') {
+        input.value = 'p-6 bg-gradient-to-r from-teal-500 via-indigo-600 to-pink-500 rounded-2xl shadow-xl text-white flex items-center justify-between';
+      } else if (preset === 'minimal') {
+        input.value = 'p-6 bg-slate-950 border border-slate-800 rounded-xl text-white flex items-center justify-between';
+      } else if (preset === 'cyber') {
+        input.value = 'p-6 bg-slate-950 border-2 border-teal-400 rounded-none shadow-[0_0_25px_rgba(45,212,191,0.3)] text-teal-300 flex items-center justify-between font-mono';
+      }
+      updateLiveStyler();
+    }
+
+    function resetTwStyler() {
+      document.getElementById('tw-live-input').value = 'p-6 bg-gradient-to-r from-indigo-900 to-slate-900 rounded-2xl border border-indigo-500/40 shadow-2xl shadow-indigo-500/20 text-white flex items-center justify-between transition-all duration-300 hover:scale-[1.02]';
+      updateLiveStyler();
+      showToast('Styler reset to default');
+    }
+
+    function loadClassesToStyler(classes) {
+      document.getElementById('tw-live-input').value = classes;
+      updateLiveStyler();
+      document.getElementById('tw-live-input').scrollIntoView({ behavior: 'smooth' });
+      showToast('Loaded classes into Real-time Styler!');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTopics(window.tailwindTopics);
+      ProgressTracker.updateUI('tailwind');
+      updateLiveStyler();
+
+      document.getElementById('topic-search')?.addEventListener('input', applyFilterAndSearch);
+      document.getElementById('tw-live-input')?.addEventListener('input', updateLiveStyler);
+    });
+  </script>
+</body>
+</html>

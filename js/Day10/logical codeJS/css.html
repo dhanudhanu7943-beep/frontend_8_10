@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern CSS Mastery - 25+ Topics & Visual Sandbox</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assests/css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-sky-500 selection:text-white">
+
+  <!-- Universal Header / Navbar -->
+  <header class="sticky top-0 z-40 glass-panel border-b border-slate-800/80 bg-slate-950/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-sky-600/20 border border-sky-500/40 flex items-center justify-center text-sky-400 font-black text-lg group-hover:scale-105 transition-transform">
+          #
+        </div>
+        <div>
+          <span class="font-extrabold text-lg tracking-tight text-white">DevMaster</span>
+          <span class="text-[10px] font-mono block text-sky-400 font-semibold -mt-1 tracking-widest uppercase">CSS Track</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-1 font-medium text-sm">
+        <a href="index.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition">Dashboard</a>
+        <a href="html.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-orange-400 hover:bg-orange-950/30 transition">HTML (25)</a>
+        <a href="css.html" class="px-4 py-2 rounded-lg text-sky-400 bg-sky-950/40 border-b-2 border-sky-500 transition">CSS (25)</a>
+        <a href="javascript.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-amber-400 hover:bg-amber-950/30 transition">JavaScript (25)</a>
+        <a href="tailwind.html" class="px-4 py-2 rounded-lg text-slate-300 hover:text-teal-400 hover:bg-teal-950/30 transition">Tailwind (25)</a>
+      </nav>
+
+      <!-- Quiz Button -->
+      <div class="flex items-center gap-3">
+        <button onclick="openQuizModal('Modern CSS', window.cssQuiz)" class="px-4 py-2 rounded-xl text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-lg shadow-sky-500/20 transition flex items-center gap-2">
+          <span>🎯 Take Quiz</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Hero / Progress Header -->
+    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-sky-500/20 bg-gradient-to-r from-sky-950/30 via-slate-900 to-slate-950 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-semibold">
+          <span>🎨 25 Essential CSS Topics</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-black text-white">Modern CSS & Layout Mastery</h1>
+        <p class="text-sm text-slate-300 max-w-xl">
+          Master Flexbox, 2D CSS Grid, Subgrid, Glassmorphism, 3D Transforms, Container Queries, :has() parent selectors, and Fluid Typography.
+        </p>
+      </div>
+
+      <!-- Live Track Progress Widget -->
+      <div class="glass-card p-4 rounded-2xl border border-slate-800 w-full md:w-64 space-y-2">
+        <div class="flex justify-between text-xs font-semibold">
+          <span class="text-slate-400">Track Progress</span>
+          <span id="progress-percentage" class="text-sky-400 font-mono">0%</span>
+        </div>
+        <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+          <div id="progress-bar-fill" class="bg-sky-500 h-full w-0 transition-all duration-500"></div>
+        </div>
+        <div class="text-[11px] text-slate-400 text-right">
+          Completed: <span id="completed-count" class="font-bold text-white">0 / 25</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Interactive Visual CSS Sandbox Playground -->
+    <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+      <div class="p-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+          <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+          <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+          <span class="text-xs font-mono text-slate-300 font-bold ml-2">🎛️ Interactive Visual CSS Playground</span>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-sky-400">
+          Real-time Live Adjustments
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-slate-800 p-6 gap-6 lg:gap-0">
+        <!-- Controls Column -->
+        <div class="lg:pr-6 space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">Visual Controls</h4>
+          
+          <!-- Flex Direction -->
+          <div class="space-y-1">
+            <label class="text-xs text-slate-300 font-medium">Flex Direction:</label>
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="updateCssVisual('direction', 'row')" class="css-ctrl-btn active px-2.5 py-1.5 rounded-lg text-xs bg-sky-600 text-white font-semibold">row</button>
+              <button onclick="updateCssVisual('direction', 'column')" class="css-ctrl-btn px-2.5 py-1.5 rounded-lg text-xs bg-slate-800 text-slate-300 font-semibold hover:bg-slate-700">column</button>
+            </div>
+          </div>
+
+          <!-- Justify Content -->
+          <div class="space-y-1">
+            <label class="text-xs text-slate-300 font-medium">Justify Content:</label>
+            <select id="css-justify-select" onchange="updateCssVisual('justify', this.value)" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-white">
+              <option value="space-between">space-between</option>
+              <option value="space-around">space-around</option>
+              <option value="space-evenly">space-evenly</option>
+              <option value="center">center</option>
+              <option value="flex-start">flex-start</option>
+              <option value="flex-end">flex-end</option>
+            </select>
+          </div>
+
+          <!-- Gap Slider -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs text-slate-300">
+              <span>Gap:</span>
+              <span id="gap-val-display" class="font-mono text-sky-400">16px</span>
+            </div>
+            <input type="range" id="css-gap-slider" min="0" max="40" value="16" oninput="updateCssVisual('gap', this.value + 'px')" class="w-full accent-sky-500">
+          </div>
+
+          <!-- Border Radius -->
+          <div class="space-y-1">
+            <div class="flex justify-between text-xs text-slate-300">
+              <span>Border Radius:</span>
+              <span id="radius-val-display" class="font-mono text-sky-400">12px</span>
+            </div>
+            <input type="range" id="css-radius-slider" min="0" max="30" value="12" oninput="updateCssVisual('radius', this.value + 'px')" class="w-full accent-sky-500">
+          </div>
+        </div>
+
+        <!-- Live Visual Stage Column -->
+        <div class="lg:px-6 flex flex-col justify-center min-h-[220px]">
+          <span class="text-xs font-mono text-slate-400 mb-2">Live Render Canvas:</span>
+          <div id="css-visual-stage" class="p-6 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-between transition-all duration-300 min-h-[160px]" style="gap: 16px; border-radius: 12px;">
+            <div class="css-demo-box size-14 bg-gradient-to-tr from-sky-500 to-indigo-600 rounded-xl flex items-center justify-center font-black text-white text-sm shadow-lg shadow-sky-500/30">1</div>
+            <div class="css-demo-box size-14 bg-gradient-to-tr from-purple-500 to-pink-500 rounded-xl flex items-center justify-center font-black text-white text-sm shadow-lg shadow-purple-500/30">2</div>
+            <div class="css-demo-box size-14 bg-gradient-to-tr from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center font-black text-white text-sm shadow-lg shadow-emerald-500/30">3</div>
+          </div>
+        </div>
+
+        <!-- Generated CSS Code Column -->
+        <div class="lg:pl-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono text-slate-400 block mb-2">Generated CSS Output:</span>
+            <pre id="generated-css-code" class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs text-sky-300 overflow-x-auto leading-relaxed">.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: 12px;
+}</pre>
+          </div>
+          <button onclick="copyToClipboard(document.getElementById('generated-css-code').textContent, this)" class="mt-4 w-full py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-semibold transition flex items-center justify-center gap-1.5">
+            📋 Copy Generated CSS
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search & Filters -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="relative w-full sm:w-80">
+        <input type="text" id="topic-search" placeholder="Search 25+ CSS topics..." class="w-full bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500/50">
+        <span class="absolute right-3 top-3 text-slate-500 text-xs">🔍</span>
+      </div>
+
+      <!-- Filter Pills -->
+      <div class="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0" id="filter-pills">
+        <button onclick="filterCssTopics('all')" class="category-pill active px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-600 text-white transition">All (25)</button>
+        <button onclick="filterCssTopics('Flexbox')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Flexbox</button>
+        <button onclick="filterCssTopics('Grid')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Grid</button>
+        <button onclick="filterCssTopics('Modern CSS')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Modern CSS</button>
+        <button onclick="filterCssTopics('Animation')" class="category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition">Animation</button>
+      </div>
+    </div>
+
+    <!-- Topics Grid -->
+    <div id="css-topics-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Dynamic CSS cards injected via JS -->
+    </div>
+
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-8 text-center text-xs text-slate-500 mt-12">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p>&copy; 2026 DevMaster Learning Hub &bull; 25+ Comprehensive CSS Topics</p>
+      <div class="flex justify-center gap-4 text-slate-400">
+        <a href="index.html" class="hover:text-white">Dashboard</a>
+        <span>&bull;</span>
+        <a href="html.html" class="hover:text-orange-400">HTML (25)</a>
+        <span>&bull;</span>
+        <a href="javascript.html" class="hover:text-amber-400">JavaScript (25)</a>
+        <span>&bull;</span>
+        <a href="tailwind.html" class="hover:text-teal-400">Tailwind (25)</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assests/js/common.js"></script>
+  <script src="assests/js/css-data.js"></script>
+  <script>
+    window.topicsData = window.cssTopics;
+    let activeCategory = 'all';
+
+    // Playground state
+    const visualState = {
+      direction: 'row',
+      justify: 'space-between',
+      gap: '16px',
+      radius: '12px'
+    };
+
+    function updateCssVisual(prop, val) {
+      visualState[prop] = val;
+      const stage = document.getElementById('css-visual-stage');
+      
+      if (prop === 'direction') {
+        stage.style.flexDirection = val;
+        document.querySelectorAll('.css-ctrl-btn').forEach(btn => {
+          if (btn.textContent === val) {
+            btn.className = 'css-ctrl-btn active px-2.5 py-1.5 rounded-lg text-xs bg-sky-600 text-white font-semibold';
+          } else {
+            btn.className = 'css-ctrl-btn px-2.5 py-1.5 rounded-lg text-xs bg-slate-800 text-slate-300 font-semibold hover:bg-slate-700';
+          }
+        });
+      } else if (prop === 'justify') {
+        stage.style.justifyContent = val;
+      } else if (prop === 'gap') {
+        stage.style.gap = val;
+        document.getElementById('gap-val-display').textContent = val;
+      } else if (prop === 'radius') {
+        stage.style.borderRadius = val;
+        document.getElementById('radius-val-display').textContent = val;
+      }
+
+      const code = `.container {
+  display: flex;
+  flex-direction: ${visualState.direction};
+  justify-content: ${visualState.justify};
+  gap: ${visualState.gap};
+  border-radius: ${visualState.radius};
+}`;
+      document.getElementById('generated-css-code').textContent = code;
+    }
+
+    function renderTopics(topics) {
+      const container = document.getElementById('css-topics-container');
+      if (!container) return;
+
+      if (topics.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-12 glass-panel rounded-2xl">
+            <p class="text-slate-400 text-sm">No topics found matching your search.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = topics.map(t => {
+        const isDone = ProgressTracker.isCompleted('css', t.id);
+        return `
+          <div class="glass-card p-6 rounded-2xl border ${isDone ? 'border-emerald-500/40 bg-emerald-950/10' : 'border-slate-800'} flex flex-col justify-between space-y-4" id="card-${t.id}">
+            <div>
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">${t.category}</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded ${t.difficulty === 'Beginner' ? 'bg-emerald-500/10 text-emerald-400' : t.difficulty === 'Intermediate' ? 'bg-amber-500/10 text-amber-400' : 'bg-purple-500/10 text-purple-400'}">${t.difficulty}</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white">${t.title}</h3>
+                </div>
+                <!-- Checkbox -->
+                <button onclick="toggleTopicDone('${t.id}')" title="Mark as Completed" class="w-8 h-8 rounded-xl border flex items-center justify-center transition shrink-0 ${isDone ? 'bg-emerald-500 border-emerald-400 text-slate-950' : 'border-slate-700 bg-slate-900 text-slate-500 hover:border-slate-500'}">
+                  ${isDone ? '✓' : ''}
+                </button>
+              </div>
+
+              <p class="text-xs text-slate-300 mt-2 leading-relaxed">${t.explanation}</p>
+            </div>
+
+            <!-- Code Block with Copy -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                <span>CSS Declaration:</span>
+                <button onclick="copyToClipboard(\`${escapeHTML(t.code)}\`, this)" class="hover:text-white">
+                  📋 Copy CSS
+                </button>
+              </div>
+              <pre class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs font-mono text-sky-200 overflow-x-auto"><code>${escapeHTML(t.code)}</code></pre>
+            </div>
+
+            <!-- Live Mini Preview -->
+            <div>
+              <span class="text-[11px] text-slate-400 font-mono block mb-1">Visual Demonstration:</span>
+              <div style="${t.previewCss}" class="border border-slate-800 overflow-hidden">
+                <span class="text-xs font-medium text-slate-200">Interactive Element Preview</span>
+              </div>
+            </div>
+
+            <!-- Pro Tip -->
+            <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-slate-400">
+              <strong class="text-sky-400">Pro-Tip:</strong> ${t.tips}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function toggleTopicDone(id) {
+      ProgressTracker.toggleTopic('css', id);
+      applyFilterAndSearch();
+    }
+
+    function filterCssTopics(category) {
+      activeCategory = category;
+      document.querySelectorAll('#filter-pills .category-pill').forEach(btn => {
+        if ((category === 'all' && btn.textContent.includes('All')) || btn.textContent === category) {
+          btn.className = 'category-pill active px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-600 text-white transition';
+        } else {
+          btn.className = 'category-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-slate-300 hover:bg-slate-800 transition';
+        }
+      });
+      applyFilterAndSearch();
+    }
+
+    function applyFilterAndSearch() {
+      const query = document.getElementById('topic-search')?.value.toLowerCase() || '';
+      const filtered = window.cssTopics.filter(t => {
+        const matchesCat = activeCategory === 'all' || t.category === activeCategory;
+        const matchesSearch = t.title.toLowerCase().includes(query) || 
+                              t.explanation.toLowerCase().includes(query) ||
+                              t.code.toLowerCase().includes(query);
+        return matchesCat && matchesSearch;
+      });
+      renderTopics(filtered);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTopics(window.cssTopics);
+      ProgressTracker.updateUI('css');
+      document.getElementById('topic-search')?.addEventListener('input', applyFilterAndSearch);
+    });
+  </script>
+</body>
+</html>
