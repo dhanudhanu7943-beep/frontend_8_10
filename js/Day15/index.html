@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task15</title>
+</head>
+<style>
+        #para {
+            
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+
+        #para.show {
+            opacity: 1;
+            transform: 1px;
+        }
+        .css{
+
+            background-color: red;
+            color: aquamarine;
+        }
+        .green{
+            background-color: rgb(136, 230, 236);
+            color: black;
+        }
+        #card{
+            height: 350px;
+            width: 350px;
+            border-radius: 20px;
+            border:  2px solid black;
+            background-color: antiquewhite;
+        }
+        #card img{
+            height: 180px;
+            width: 80%;
+            margin-left: 20px;
+                    }
+      #card p{
+
+        margin: 10px;
+      }  
+    .para1 {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+#para1.show {
+    opacity: 1;
+    max-height: 200px;
+}            
+
+    </style>
+<body>
+
+    <p id="para">
+        JavaScript is a programming language used to make websites interactive.
+    </p>
+
+     <button id="btn">Click</button>
+
+   <h1>TASK2</h1>
+
+     <button id="btn1">Click Here</button>
+
+      <h1  id="tittle"></h1>
+
+
+      <h2>TASK3</h2>
+
+<div id="card">
+
+    <img src="assests/st4.jpg" alt="image">
+
+    <div class="para1" id="para1">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatem libero enim, est quae, unde voluptatibus natus
+            ipsa deserunt delectus illo dolor debitis doloribus placeat,
+            quidem earum? Minima quaerat modi ut!
+        </p>
+    </div>
+
+    <button id="btn">Show Details</button>
+
+</div>
+
+
+        
+
+    <script src="assests/js/index.js"></script>
+</body>
+

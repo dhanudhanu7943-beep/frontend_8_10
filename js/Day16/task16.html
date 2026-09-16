@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK16</title>
+    <style>
+        #box {
+            width: 300px;
+            padding: 30px;
+            background-color: lightgray;
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 2px solid rgb(241, 121, 141);
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        #box.active {
+            background-color: blue;
+            color: white;
+        }
+
+
+        #box1 {
+            width: 300px;
+            padding: 30px;
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+
+        #box1.active {
+            background-color: rgb(0, 136, 160);
+            color: rgb(119, 4, 10);
+        }
+
+
+        #card {
+            width: 100px;
+            height: 100px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+        .white {
+            background: rgb(196, 195, 195);
+            color: black;
+
+        }
+
+        .dark {
+            background: black;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+        <p id="para">Add an active class to the box.Change the background color and text color using CSS.</p>
+    </div>
+
+    <button id="btn"> CLICK</button>
+
+
+    <h2>TASK2</h2>
+
+    <div id="box1" class="active">
+        <p id="text"> Create a box with an active class already applied.</p>
+    </div>
+
+    <button id="btn1">Remove</button>
+
+
+
+    <h2>TASK3</h2>
+
+    <div id="card" class="white">
+        <p id="text1"> Create a box with an active class already applied.</p>
+    </div>
+
+    <button id="button">click</button>
+
+
+
+    <script src="assests/js/index.js"></script>
+</body>
+
+</html>
