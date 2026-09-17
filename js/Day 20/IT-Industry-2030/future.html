@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Future Is Humans + AI – 2030 Developer Skills & The IT Manifesto</title>
+  <meta name="description" content="Discover how human developers ascend with AI in 2030: core competencies, continuous learning roadmap, interactive readiness assessment, and the 2030 IT Manifesto.">
+  
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Sticky Executive Header Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-box">2030</div>
+        <span>IT INDUSTRY <span class="gradient-text">2030</span></span>
+        <span class="brand-badge">SYMBIOSIS</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="industry-2030.html" class="nav-link">IT Industry 2030</a></li>
+        <li><a href="challenges.html" class="nav-link">Challenges</a></li>
+        <li><a href="without-developers.html" class="nav-link">Developers</a></li>
+        <li><a href="future.html" class="nav-link active">Future</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Interactive Theme Palette Picker -->
+        <div class="theme-picker-wrapper">
+          <button class="theme-picker-btn" id="theme-picker-btn" aria-label="Select theme palette">
+            <span class="color-dot emerald" id="active-theme-indicator"></span>
+            <span style="font-size: 0.8rem;">Theme</span>
+            <i class="fas fa-chevron-down" style="font-size: 0.65rem; color: var(--text-dark);"></i>
+          </button>
+          <div class="theme-dropdown" id="theme-dropdown">
+            <button class="theme-opt-btn active" data-theme-val="emerald">
+              <span class="color-dot emerald"></span> Emerald Obsidian
+            </button>
+            <button class="theme-opt-btn" data-theme-val="violet">
+              <span class="color-dot violet"></span> Electric Violet
+            </button>
+            <button class="theme-opt-btn" data-theme-val="crimson">
+              <span class="color-dot crimson"></span> Crimson Tech
+            </button>
+            <button class="theme-opt-btn" data-theme-val="navy">
+              <span class="color-dot navy"></span> Deep Navy
+            </button>
+            <button class="theme-opt-btn" data-theme-val="light">
+              <span class="color-dot light"></span> Platinum Light
+            </button>
+          </div>
+        </div>
+
+        <a href="#assessment" class="btn btn-gold btn-sm btn-nav">
+          <i class="fas fa-clipboard-check"></i> Readiness Test
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <nav class="mobile-drawer" id="mobile-drawer">
+    <!-- Mobile Palette Switcher -->
+    <div style="padding: 0.75rem 1rem; margin-bottom: 0.5rem; border-radius: var(--radius-sm); background: var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+      <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Theme Palette</span>
+      <div style="display: flex; gap: 0.6rem;">
+        <button class="color-dot emerald theme-opt-btn" style="width: 22px; height: 22px; padding: 0; border: none; cursor: pointer;" data-theme-val="emerald" title="Emerald"></button>
+        <button class="color-dot violet theme-opt-btn" style="width: 22px; height: 22px; padding: 0; border: none; cursor: pointer;" data-theme-val="violet" title="Violet"></button>
+        <button class="color-dot crimson theme-opt-btn" style="width: 22px; height: 22px; padding: 0; border: none; cursor: pointer;" data-theme-val="crimson" title="Crimson"></button>
+        <button class="color-dot navy theme-opt-btn" style="width: 22px; height: 22px; padding: 0; border: none; cursor: pointer;" data-theme-val="navy" title="Navy"></button>
+        <button class="color-dot light theme-opt-btn" style="width: 22px; height: 22px; padding: 0; border: none; cursor: pointer;" data-theme-val="light" title="Light"></button>
+      </div>
+    </div>
+    <a href="index.html" class="mobile-nav-link">
+      <span><i class="fas fa-home"></i> Home</span>
+      <i class="fas fa-chevron-right text-muted"></i>
+    </a>
+    <a href="industry-2030.html" class="mobile-nav-link">
+      <span><i class="fas fa-microchip"></i> IT Industry 2030</span>
+      <i class="fas fa-chevron-right text-muted"></i>
+    </a>
+    <a href="challenges.html" class="mobile-nav-link">
+      <span><i class="fas fa-shield-halved"></i> Challenges & Solutions</span>
+      <i class="fas fa-chevron-right text-muted"></i>
+    </a>
+    <a href="without-developers.html" class="mobile-nav-link">
+      <span><i class="fas fa-users-slash"></i> World Without Developers</span>
+      <i class="fas fa-chevron-right text-muted"></i>
+    </a>
+    <a href="future.html" class="mobile-nav-link active">
+      <span><i class="fas fa-brain"></i> Future (Humans + AI)</span>
+      <i class="fas fa-chevron-right text-muted"></i>
+    </a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- PAGE HERO -->
+    <section class="section" style="padding-top: 4.5rem; padding-bottom: 3.5rem;">
+      <div class="container text-center" style="max-width: 850px; margin: 0 auto; text-align: center;">
+        <div class="section-tag gold fade-in-up">
+          <i class="fas fa-brain"></i> Part 05 &bull; The Symbiotic Destiny
+        </div>
+        <h1 class="section-title fade-in-up" style="font-size: 3.2rem; line-height: 1.15;">
+          The Future Is <br>
+          <span class="gradient-text">Humans + Artificial Intelligence</span>
+        </h1>
+        <p class="section-desc fade-in-up" style="font-size: 1.2rem;">
+          Artificial intelligence does not replace the developer—it eliminates the tedious barriers between human imagination and software reality. The developer of 2030 is an empowered system architect commanding extraordinary leverage.
+        </p>
+      </div>
+    </section>
+
+    <!-- HOW DEVELOPERS WORK WITH AI IN 2030 -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <div class="section-tag">
+            <i class="fas fa-hands-holding-circle"></i> The New Workflow
+          </div>
+          <h2 class="section-title">How Developers Work With AI in 2030</h2>
+          <p class="section-desc">
+            The day-to-day role shifts from typing syntax line by line to high-altitude orchestration, verification, and ethical steering.
+          </p>
+        </div>
+
+        <div class="grid-4 fade-in-up">
+          <!-- Modality 1 -->
+          <div class="card">
+            <div class="card-icon">
+              <i class="fas fa-diagram-project"></i>
+            </div>
+            <h3 class="card-title">System Composer</h3>
+            <p class="card-desc">
+              Developers specify domain constraints, security policies, and performance budgets. Autonomous AI swarms draft and assemble candidate microservice topologies within seconds.
+            </p>
+          </div>
+
+          <!-- Modality 2 -->
+          <div class="card card-gold">
+            <div class="card-icon gold">
+              <i class="fas fa-magnifying-glass-chart"></i>
+            </div>
+            <h3 class="card-title">Critical Verifier</h3>
+            <p class="card-desc">
+              Engineers act as supreme forensic interrogators—running adversarial stress simulations, verifying mathematical formal proofs, and hunting down edge-case hallucinations.
+            </p>
+          </div>
+
+          <!-- Modality 3 -->
+          <div class="card">
+            <div class="card-icon">
+              <i class="fas fa-shuffle"></i>
+            </div>
+            <h3 class="card-title">Context Orchestrator</h3>
+            <p class="card-desc">
+              Curating high-fidelity enterprise knowledge graphs, vector memories, and dynamic grounding prompts that keep specialized AI agents strictly aligned with business truth.
+            </p>
+          </div>
+
+          <!-- Modality 4 -->
+          <div class="card">
+            <div class="card-icon">
+              <i class="fas fa-heart-pulse"></i>
+            </div>
+            <h3 class="card-title">Human Experience Steward</h3>
+            <p class="card-desc">
+              Infusing software with aesthetic warmth, intuitive ergonomic accessibility, and moral consciousness that purely mathematical neural token-predictors can never possess.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2030 DEVELOPER CORE SKILL MATRIX -->
+    <section class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <div class="section-tag gold">
+            <i class="fas fa-dna"></i> Skill Evolution
+          </div>
+          <h2 class="section-title">The 2030 Developer Skill Matrix</h2>
+          <p class="section-desc">
+            The skills that mattered in 2020 are commoditized. Here are the elite capabilities that will distinguish irreplaceable engineers in 2030.
+          </p>
+        </div>
+
+        <div class="grid-2 fade-in-up">
+          <!-- Hard Technical Skills -->
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+              <div class="card-icon" style="margin-bottom: 0;">
+                <i class="fas fa-terminal"></i>
+              </div>
+              <div>
+                <h3 style="font-size: 1.35rem;">Architectural &amp; Technical Mastery</h3>
+                <span class="text-mono" style="font-size: 0.8rem; color: var(--accent-cyan-light);">THE FOUNDATIONAL PILLARS</span>
+              </div>
+            </div>
+
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+              <li style="display: flex; gap: 0.75rem;">
+                <i class="fas fa-code-branch" style="color: var(--accent-cyan); margin-top: 0.25rem;"></i>
+                <div>
+                  <strong style="color: var(--text-primary);">Distributed Systems &amp; Concurrency:</strong>
+                  <span style="font-size: 0.9rem; color: var(--text-muted);"> Designing multi-region, self-healing event fabrics, fault-tolerant consensus, and quantum-edge meshes.</span>
+                </div>
+              </li>
+              <li style="display: flex; gap: 0.75rem;">
+                <i class="fas fa-code-branch" style="color: var(--accent-cyan); margin-top: 0.25rem;"></i>
+                <div>
+                  <strong style="color: var(--text-primary);">Formal Verification &amp; Math Proofs:</strong>
+                  <span style="font-size: 0.9rem; color: var(--text-muted);"> Using automated theorem provers (e.g., TLA+, Coq, Lean) to mathematically certify that generated software will not fail.</span>
+                </div>
+              </li>
+              <li style="display: flex; gap: 0.75rem;">
+                <i class="fas fa-code-branch" style="color: var(--accent-cyan); margin-top: 0.25rem;"></i>
+                <div>
+                  <strong style="color: var(--text-primary);">AI Model Architecture &amp; Evaluation:</strong>
+                  <span style="font-size: 0.9rem; color: var(--text-muted);"> Understanding attention mechanics, loss functions, embedding topologies, and real-time fine-tuning pipelines.</span>
+                </div>
+              </li>
+              <li style="display: flex; gap: 0.75rem;">
+                <i class="fas fa-code-branch" style="color: var(--accent-cyan); margin-top: 0.25rem;"></i>
+                <div>
+                  <strong style="color: var(--text-primary);">Post-Quantum Security &amp; Cryptography:</strong>
+                  <span style="font-size: 0.9rem; color: var(--text-muted);"> Implementing lattice cryptography, zero-knowledge proofs (ZKPs), and tamper-evident runtime enclaves.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Meta & Cognitive Skills -->
+          <div class="card card-gold">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+              <div class="card-icon gold" style="margin-bottom: 0;">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div>
+                <h3 style="font-size: 1.35rem;">Meta-Cognitive &amp; Human Powers</h3>
+                <span class="text-mono" style="font-size: 0.8rem; color: var(--accent-gold-light);">THE IRREPLACEABLE ADVANTAGES</span>
+              </div>
+            </div>
+
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+              <li style="display: flex; gap: 0.75rem;">
+                <i class="fas fa-sparkles" style="color: var(--accent-gold); margin-top: 0.25rem;"></i>
+                <div>
+                  <strong style="color: var(--text-primary);">First-Principles Problem Decomposition:</strong>
+                  <span style="font-size: 0.9rem; color: var(--text-muted);"> Breaking ambiguous, unprecedented human crises into cleanly bounded engineering specifications.</span>
+                </div>
+              </li>
+              <li style="display: flex; gap: 0.75rem;">
+                <i class="fas fa-sparkles" style="color: var(--accent-gold); margin-top: 0.25rem;"></i>
+                <div>
+                  <strong style="color: var(--text-primary);">Skeptical Forensic Intuition:</strong>
+                  <span style="font-size: 0.9rem; color: var(--text-muted);"> Instinctively questioning generated solutions, probing silent assumptions, and spotting hidden algorithmic bias.</span>
+                </div>
+              </li>
+              <li style="display: flex; gap: 0.75rem;">
+                <i class="fas fa-sparkles" style="color: var(--accent-gold); margin-top: 0.25rem;"></i>
+                <div>
+                  <strong style="color: var(--text-primary);">Cross-Domain Translation &amp; Empathy:</strong>
+                  <span style="font-size: 0.9rem; color: var(--text-muted);"> Bridging complex legal, medical, and emotional human realities into executable technological systems.</span>
+                </div>
+              </li>
+              <li style="display: flex; gap: 0.75rem;">
+                <i class="fas fa-sparkles" style="color: var(--accent-gold); margin-top: 0.25rem;"></i>
+                <div>
+                  <strong style="color: var(--text-primary);">Ethical Courage &amp; Moral Agency:</strong>
+                  <span style="font-size: 0.9rem; color: var(--text-muted);"> The courage to halt a deployment when algorithmic models infringe on human rights, privacy, or civic safety.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTINUOUS LEARNING ROADMAP (2024 TO 2030) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <div class="section-tag">
+            <i class="fas fa-graduation-cap"></i> Adaptation Roadmap
+          </div>
+          <h2 class="section-title">The Continuous Learning Journey</h2>
+          <p class="section-desc">
+            How should today’s developers evolve between now and 2030 to guarantee relevance, prestige, and high-impact leadership?
+          </p>
+        </div>
+
+        <div class="grid-3 fade-in-up">
+          <!-- Step 1 -->
+          <div class="card">
+            <span class="text-mono" style="font-size: 0.8rem; color: var(--accent-cyan); font-weight: 700;">STAGE 01 (TODAY)</span>
+            <h3 class="card-title" style="margin-top: 0.5rem;">Master the AI Pair Partner</h3>
+            <p class="card-desc">
+              Stop writing boilerplate manually. Integrate AI copilots and agentic CLI tools into every step of your workflow. Learn to write hyper-specific specifications and generate automated test suites.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="card card-gold">
+            <span class="text-mono" style="font-size: 0.8rem; color: var(--accent-gold); font-weight: 700;">STAGE 02 (2026–2028)</span>
+            <h3 class="card-title" style="margin-top: 0.5rem;">Pivot to Distributed Systems</h3>
+            <p class="card-desc">
+              Double down on distributed cloud computing, event-driven meshes, database consistency guarantees (CAP theorem, Paxos, Raft), and formal verification tooling. Understand what code does at the hardware boundary.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="card">
+            <span class="text-mono" style="font-size: 0.8rem; color: var(--accent-cyan); font-weight: 700;">STAGE 03 (2028–2030)</span>
+            <h3 class="card-title" style="margin-top: 0.5rem;">Become a Cognitive Director</h3>
+            <p class="card-desc">
+              Orchestrate autonomous agent fleets. Steer high-level system architecture, ensure corporate security compliance, and specialize in domain synthesis (e.g., bio-tech software, spatial robotics, financial engineering).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE 2030 DEVELOPER READINESS ASSESSMENT -->
+    <section class="section" id="assessment" style="background: var(--bg-secondary);">
+      <div class="container" style="max-width: 900px; margin: 0 auto;">
+        <div class="section-header fade-in-up">
+          <div class="section-tag gold">
+            <i class="fas fa-clipboard-check"></i> Interactive Tool
+          </div>
+          <h2 class="section-title">2030 Developer Readiness Assessment</h2>
+          <p class="section-desc">
+            Evaluate your preparedness for the next decade of software engineering. Answer these 5 strategic questions to receive your 2030 Readiness Score and personalized recommendations.
+          </p>
+        </div>
+
+        <div class="assessment-box fade-in-up" id="readiness-form">
+          <!-- Question 1 -->
+          <div class="question-card">
+            <h3 class="question-title">1. How do you currently approach boilerplate and routine syntax?</h3>
+            <div class="options-grid">
+              <button class="option-btn" data-q="q1" data-val="1">I write almost all code and endpoints manually by hand.</button>
+              <button class="option-btn" data-q="q1" data-val="2">I use basic IDE auto-complete occasionally.</button>
+              <button class="option-btn" data-q="q1" data-val="3">I actively use AI copilots to generate boilerplate and routine tests.</button>
+              <button class="option-btn" data-q="q1" data-val="4">I orchestrate multi-file agent workflows and spend my time reviewing logic.</button>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question-card">
+            <h3 class="question-title">2. What is your comfort level with high-level system architecture?</h3>
+            <div class="options-grid">
+              <button class="option-btn" data-q="q2" data-val="1">I strictly focus on frontend UI components or simple single scripts.</button>
+              <button class="option-btn" data-q="q2" data-val="2">I can build standard CRUD APIs with basic database schemas.</button>
+              <button class="option-btn" data-q="q2" data-val="3">I understand microservices, event streaming, caching, and cloud deployments.</button>
+              <button class="option-btn" data-q="q2" data-val="4">I architect distributed, resilient, multi-region fault-tolerant topologies.</button>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="question-card">
+            <h3 class="question-title">3. When AI generates a complex 300-line function, what is your reaction?</h3>
+            <div class="options-grid">
+              <button class="option-btn" data-q="q3" data-val="1">I copy and paste it into production if it runs without errors.</button>
+              <button class="option-btn" data-q="q3" data-val="2">I skim through it and write one or two simple manual tests.</button>
+              <button class="option-btn" data-q="q3" data-val="3">I verify memory leaks, algorithmic complexity, and write automated test suites.</button>
+              <button class="option-btn" data-q="q3" data-val="4">I subject it to adversarial fuzzing, security review, and edge-case boundary proofs.</button>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="question-card">
+            <h3 class="question-title">4. How closely are your technical skills connected to real business domain problems?</h3>
+            <div class="options-grid">
+              <button class="option-btn" data-q="q4" data-val="1">I just close Jira tickets without knowing why the business needs them.</button>
+              <button class="option-btn" data-q="q4" data-val="2">I know my team's feature goals but rarely speak with stakeholders.</button>
+              <button class="option-btn" data-q="q4" data-val="3">I actively translate user pain points into technical software specifications.</button>
+              <button class="option-btn" data-q="q4" data-val="4">I shape company product strategy and design software directly tied to revenue &amp; compliance.</button>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="question-card" style="border-bottom: none;">
+            <h3 class="question-title">5. What is your commitment to continuous learning outside of syntax?</h3>
+            <div class="options-grid">
+              <button class="option-btn" data-q="q5" data-val="1">I only learn a new framework if my current employer requires it.</button>
+              <button class="option-btn" data-q="q5" data-val="2">I read occasional tech blogs and watch release tutorials.</button>
+              <button class="option-btn" data-q="q5" data-val="3">I consistently study AI safety, systems design, and cloud architectures.</button>
+              <button class="option-btn" data-q="q5" data-val="4">I actively build experimental agent projects, contribute to open research, and explore frontier tech.</button>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 2rem;">
+            <button class="btn btn-primary btn-lg" id="calc-readiness-btn">
+              <i class="fas fa-calculator"></i> Calculate 2030 Readiness Score
+            </button>
+          </div>
+
+          <!-- Dynamic Assessment Result Panel -->
+          <div class="assessment-result-panel" id="assessment-result">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem;">
+              <div>
+                <span class="text-mono" style="font-size: 0.8rem; color: var(--text-dark);">2030 EVALUATION REPORT</span>
+                <h3 id="result-tier-title" style="font-size: 1.5rem; margin-top: 0.25rem;">Tier Calculating...</h3>
+              </div>
+              <div class="text-mono" style="font-size: 2.2rem; font-weight: 900; color: var(--text-primary);" id="result-score-val">0%</div>
+            </div>
+            <p id="result-desc" style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin-bottom: 0;">
+              Your customized analysis will appear here after calculation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE 2030 IT MANIFESTO -->
+    <section class="section">
+      <div class="container">
+        <div class="manifesto-banner fade-in-up">
+          <div class="section-tag gold" style="margin-bottom: 1.5rem;">
+            <i class="fas fa-award"></i> The 2030 IT Manifesto
+          </div>
+          <div class="manifesto-quote">
+            “2030 Will Change IT. <br>
+            <span class="gradient-gold">It Won’t End It.”</span>
+          </div>
+          <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 820px; margin: 0 auto 2.5rem auto; line-height: 1.7;">
+            Programming was never merely about memorizing keywords, braces, and punctuation. It has always been the art of precise human thought: decomposing chaos into logic, defending users against failure, and dreaming new worlds into existence. As machines master syntax, humanity reclaims the essence of engineering.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="index.html" class="btn btn-primary btn-lg">
+              <i class="fas fa-rotate-left"></i> Revisit Vision Overview
+            </a>
+            <a href="without-developers.html" class="btn btn-secondary btn-lg">
+              <i class="fas fa-book-open"></i> Review Developer Indispensability
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Corporate Executive Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="brand-icon-box">2030</div>
+            <span>IT INDUSTRY <span class="gradient-text">2030</span></span>
+          </div>
+          <p>
+            An executive research and vision initiative examining the future of computing, software engineering, and human-machine collaboration in the next technological era.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Platform Pages</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">01. Home & Vision</a></li>
+            <li><a href="industry-2030.html">02. IT Industry 2030</a></li>
+            <li><a href="challenges.html">03. Challenges & Solutions</a></li>
+            <li><a href="without-developers.html">04. Without Developers</a></li>
+            <li><a href="future.html">05. The Future (Human+AI)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Key Research Areas</h4>
+          <ul class="footer-links">
+            <li><a href="industry-2030.html">Autonomous AGI Swarms</a></li>
+            <li><a href="challenges.html">AI Workforce Polarization</a></li>
+            <li><a href="without-developers.html">Infrastructure Fragility</a></li>
+            <li><a href="future.html">2030 Developer Skills</a></li>
+            <li><a href="#assessment">Readiness Assessment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Executive Vision</h4>
+          <p style="font-size: 0.85rem; color: var(--text-dark); line-height: 1.6; margin-bottom: 1rem;">
+            “Technology without human ethics and critical reason is merely an uncontrolled chain reaction. 2030 will change IT. It won't end it.”
+          </p>
+          <span class="text-mono" style="font-size: 0.75rem; color: var(--accent-cyan);">VERIFIED FOR 2030 ROADMAP</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026–2030 IT INDUSTRY 2030. Premium Future-Vision Web Platform. All rights reserved.</div>
+        <div class="text-mono" style="font-size: 0.8rem;">
+          Engineered for 2030 &bull; Multi-Theme Dynamic Experience
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Controller -->
+  <script src="js/main.js"></script>
+</body>
+</html>
