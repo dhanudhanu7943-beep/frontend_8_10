@@ -1,22 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Structure</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alagappa University Profile</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    h1 { color: #0f172a; margin-top: 0; }
+    img {
+      max-width: 240px;
+      height: auto;
+      margin: 16px 0;
+    }
+    .about-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: justify;
+      margin: 16px 0;
+    }
+    a.btn {
+      display: inline-block;
+      background: #0284c7;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <h1>ALAGAPPA UNIVERSITY</h1>
-    <br>
-    <img src="Alagappa-University.png" height="250" width="300">
-    <br>
-    <h2>About: </h2>
-    <p><b>Alagappa University is a state-owned, NAAC A++ rated university located in Karaikudi, Tamil Nadu. Established in 1985, it offers undergraduate, postgraduate, and doctoral programs across 44 departments and multiple academic centers. It is known for strong programs in Management, Science, and Education.</b></p>
-    <br>
-    <h2>Official Website Link:</h2>
-    <a href="https://www.alagappauniversity.ac.in/homepage">VISIT</a>
-  </main>  
-    
+  <div class="container">
+    <main>
+      <h1>ALAGAPPA UNIVERSITY</h1>
+      <img src="Alagappa-University.png" alt="Alagappa University Logo">
+      
+      <div class="about-box">
+        <h3>About the University</h3>
+        <p>Alagappa University is a state-owned, NAAC A++ rated university located in Karaikudi, Tamil Nadu. Established in 1985, it offers undergraduate, postgraduate, and doctoral programs across 44 departments and multiple academic centers. It is known for strong programs in Management, Science, and Education.</p>
+      </div>
+
+      <div>
+        <h3>Official Website Link</h3>
+        <a href="https://www.alagappauniversity.ac.in/homepage" target="_blank" rel="noopener noreferrer" class="btn">VISIT OFFICIAL PORTAL &rarr;</a>
+      </div>
+    </main>
+  </div>
 </body>
 </html>

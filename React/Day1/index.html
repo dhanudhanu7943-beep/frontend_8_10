@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React.js Fundamentals &bull; Day 1 Concept Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .code-font { font-family: 'JetBrains Mono', monospace; }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-4 sm:p-8 flex flex-col">
+  <div class="max-w-5xl mx-auto w-full space-y-8 flex-1">
+    
+    <!-- Header -->
+    <header class="glass-card p-6 sm:p-8 rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/40 via-slate-900 to-slate-950">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-semibold">
+            <span>⚛️ React.js &bull; Day 1 Core Fundamentals</span>
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            React.js Architecture &amp; Core Concepts
+          </h1>
+          <p class="text-sm text-slate-300 max-w-2xl">
+            A comprehensive visual reference guide to React fundamentals, component design, JSX transformation, and the Virtual DOM reconciliation cycle.
+          </p>
+        </div>
+        <a href="../../index.html" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold transition">
+          &larr; Back to Hub
+        </a>
+      </div>
+    </header>
+
+    <!-- Concepts Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Card 1: What is React -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold text-sm">1</span>
+          <h2 class="text-lg font-bold text-white">What is React?</h2>
+        </div>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          React is an open-source JavaScript library developed by Meta for building dynamic, high-performance user interfaces (UI), especially single-page web applications.
+        </p>
+        <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-cyan-300 font-mono">
+          React = Component-Based Declarative UI Library
+        </div>
+      </div>
+
+      <!-- Card 2: Library vs Framework -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold text-sm">2</span>
+          <h2 class="text-lg font-bold text-white">Is React a Library or Framework?</h2>
+        </div>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          React is a <strong class="text-white">library</strong>, not a framework. It focuses solely on the view layer (UI). Developers are free to choose routing (React Router), state management (Redux, Zustand), and styling tools as needed.
+        </p>
+      </div>
+
+      <!-- Card 3: What is a Component -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold text-sm">3</span>
+          <h2 class="text-lg font-bold text-white">What is a Component?</h2>
+        </div>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          A component is an independent, self-contained, and reusable piece of UI. Components accept arbitrary inputs called <em>props</em> and return React elements describing what should appear on screen.
+        </p>
+        <div class="flex flex-wrap gap-2 pt-1">
+          <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 text-xs font-mono">Navbar</span>
+          <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 text-xs font-mono">Button</span>
+          <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 text-xs font-mono">LoginForm</span>
+          <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 text-xs font-mono">ProductCard</span>
+        </div>
+      </div>
+
+      <!-- Card 4: Why Components Matter -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold text-sm">4</span>
+          <h2 class="text-lg font-bold text-white">Why are Components Important?</h2>
+        </div>
+        <ul class="text-sm text-slate-300 space-y-1.5 list-disc list-inside">
+          <li><strong class="text-white">Reusability:</strong> Write once and use across multiple views.</li>
+          <li><strong class="text-white">Maintainability:</strong> Update logic in one component without breaking others.</li>
+          <li><strong class="text-white">Modularity:</strong> Divide complex layouts into small, manageable pieces.</li>
+        </ul>
+      </div>
+
+      <!-- Card 5: What is JSX -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold text-sm">5</span>
+          <h2 class="text-lg font-bold text-white">What is JSX?</h2>
+        </div>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          JSX stands for <strong class="text-white">JavaScript XML</strong>. It provides an expressive HTML-like syntax inside JavaScript files, compiled by Babel into <code class="code-font text-cyan-300">React.createElement()</code> calls.
+        </p>
+        <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs code-font text-cyan-300">
+          const greeting = &lt;h1 className="title"&gt;Hello React!&lt;/h1&gt;;
+        </div>
+      </div>
+
+      <!-- Card 6: Virtual DOM vs Real DOM -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-bold text-sm">6</span>
+          <h2 class="text-lg font-bold text-white">Virtual DOM &amp; Reconciliation</h2>
+        </div>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          The Virtual DOM is a lightweight in-memory representation of the browser's Real DOM. When state changes occur:
+        </p>
+        <ol class="text-sm text-slate-300 space-y-1 list-decimal list-inside">
+          <li>React re-renders the Virtual DOM tree.</li>
+          <li>Diffing algorithm compares previous vs new tree.</li>
+          <li>Batch updates only the exact changed nodes in Real DOM.</li>
+        </ol>
+      </div>
+
+    </div>
+
+    <!-- Quick Reference Comparison -->
+    <div class="glass-card p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4">
+      <h3 class="text-base font-bold text-white flex items-center gap-2">
+        <span>⚡ Quick Comparison: Real DOM vs Virtual DOM</span>
+      </h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-slate-800 text-slate-400">
+              <th class="py-2.5 px-4 font-semibold">Feature</th>
+              <th class="py-2.5 px-4 font-semibold text-amber-400">Real DOM</th>
+              <th class="py-2.5 px-4 font-semibold text-cyan-400">Virtual DOM</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 text-slate-300">
+            <tr>
+              <td class="py-2.5 px-4 font-medium text-white">Update Speed</td>
+              <td class="py-2.5 px-4">Slow (causes browser reflow &amp; repaint)</td>
+              <td class="py-2.5 px-4 font-semibold text-cyan-300">Fast (in-memory diffing)</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 font-medium text-white">DOM Manipulation</td>
+              <td class="py-2.5 px-4">Expensive computation</td>
+              <td class="py-2.5 px-4">Minimal updates via batch patching</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-4 font-medium text-white">Memory Usage</td>
+              <td class="py-2.5 px-4">Higher memory footprint</td>
+              <td class="py-2.5 px-4">Lightweight JavaScript objects</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

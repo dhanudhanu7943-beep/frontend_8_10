@@ -1,24 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>new tab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>External Navigation Hub &bull; New Tab</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #4f46e5; padding-bottom: 8px; }
+    ol {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    li a {
+      display: block;
+      padding: 12px 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    li a:hover { background: #eef2ff; }
+  </style>
 </head>
 <body>
-    <h1>NEW TAB</h1>
+  <div class="container">
+    <h1>External Web Portals (New Tab)</h1>
     <main>
-        <ol>
-            <li><a href="https://www.google.com/search?q=goole+link&rlz=1C1AJCO_enIN1196IN1196&oq=goole+link&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCjkxMDA2ajBqMTWoAgiwAgHxBYr41jkHpAae&sourceid=chrome&source=chrome.rb&ie=UTF-8" target="_blank">Google</a></li>
-            <br>
-            <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-            <br>
-            <li><a href="https://www.instagram.com/?hl=en" target="_blank">Instagram</a></li>
-            <br>
-            <li><a href="https://www.amazon.in/dp/B09ZXCBR5T?ref=pd_sl_GoogleAds_Echo_Brand_EchoPop&tag=echodevicesingeneric-21&ascsubtag=_k_Cj0KCQjwguLSBhDLARIsAH-yPrHXd4NhHn5ovnNy_3jmQHE-ML2gb1DaYfz7QgFo1G5BdSvyJEV9EwUaAqEEEALw_wcB_k_" target="_blank">Amazon</a></li>
-            <br>
-            <li><a href="https://www.flipkart.com/voroxy-men-printed-casual-beige-shirt/p/itm85786f4ab8b42?pid=SHTH2TT7KCUCXQCP&affid=lehlahstylefl&affExtParam1=09vk9l1GD3MTpXVP1_e-HRxPmcafK3XqKbqKdGSZwVo&gad_source=1&gad_campaignid=24031848438&gbraid=0AAAABERB8QuZTMEw9BML1oN5NowyRAxEI&gclid=Cj0KCQjwguLSBhDLARIsAH-yPrGrDeSZlsQ8Fe-KnxlHXqw7tajRT8g_5csTJh7BVumpK8A5ZEGN8-8aAvkgEALw_wcB" target="_blank">Flipkart</a></li>
-        </ol>
+      <ol>
+        <li><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google Search Engine</a></li>
+        <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook Social Network</a></li>
+        <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram Photo Sharing</a></li>
+        <li><a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer">Amazon Online Shopping</a></li>
+        <li><a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer">Flipkart E-Commerce</a></li>
+      </ol>
     </main>
+  </div>
 </body>
 </html>

@@ -1,54 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form details</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form Details</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .form-card {
+      max-width: 520px;
+      width: 100%;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h2 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #6366f1; padding-bottom: 8px; }
+    label { font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 4px; display: block; }
+    input[type="text"], input[type="password"], input[type="email"], input[type="datetime-local"], select, textarea {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      margin-bottom: 12px;
+    }
+    .gender-box { margin-bottom: 12px; }
+    input[type="submit"] {
+      width: 100%;
+      background: #6366f1;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    
+  <div class="form-card">
     <h2>Registration Form Details</h2>
-    <div>
-        <form>
-        <label >Enter the Name:</label>
-        <input type="text"  placeholder="Enter name" >
-        <br><br>
-         <label >Enter the Age:</label>
-        <input type="text" placeholder="Age" >
-        <br><br>
-        <label >password:</label>
-        <input type="password" password="password"  >
-        <br>
-        <br>
-         <label >Mobile No:</label>
-        <input type="text" placeholder="Mobile no" >
-        <br><br>
-         <label >Enter a email:</label>
-        <input type="text" placeholder="email" >
-        <br><br>
-        <label >Enter a DOB:</label>
-        <input type="datetime-local">
-        <br><br>
-        <label>Gender:</label>
-         <input type="radio" name="Gender">Male
-         <input type="radio" name="Gender">Female
-         <br><br>
-         <label>Course:</label><br>
-        <select >
-            <option>Select Position</option>
-            <option>Software Developer</option>
-            <option>Web Designer</option>
-            <option>UI/UX Designer</option>
-            <option>Data Analyst</option>
-        </select><br><br>
-            <br><br>
-            <label>Address:</label><br>
-            <textarea rows="4" cols="30" placeholder="Enter your address"></textarea><br><br>
+    <form onsubmit="event.preventDefault(); alert('Registration submitted!');">
+      <label for="name">Enter Full Name:</label>
+      <input type="text" id="name" placeholder="Enter full name" required>
 
-             <input type="submit" value="Register">
+      <label for="age">Enter Age:</label>
+      <input type="number" id="age" placeholder="Age" min="15" max="100" required>
 
-         </form>
-    </div>
-   
+      <label for="password">Enter Password:</label>
+      <input type="password" id="password" placeholder="Password" required>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" placeholder="10-digit mobile" required>
+
+      <label for="email">Enter Email Address:</label>
+      <input type="email" id="email" placeholder="name@example.com" required>
+
+      <label for="dob">Date of Birth &amp; Time:</label>
+      <input type="datetime-local" id="dob">
+
+      <label>Gender:</label>
+      <div class="gender-box">
+        <label style="display:inline; margin-right: 12px;"><input type="radio" name="gender" value="male" required> Male</label>
+        <label style="display:inline;"><input type="radio" name="gender" value="female"> Female</label>
+      </div>
+
+      <label for="course">Position / Course:</label>
+      <select id="course" required>
+        <option value="">-- Select Position --</option>
+        <option>Software Developer</option>
+        <option>Web Designer</option>
+        <option>UI/UX Designer</option>
+        <option>Data Analyst</option>
+      </select>
+
+      <label for="address">Address:</label>
+      <textarea id="address" rows="3" placeholder="Enter your complete address"></textarea>
+
+      <input type="submit" value="Register Now">
+    </form>
+  </div>
 </body>
 </html>

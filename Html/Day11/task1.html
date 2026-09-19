@@ -1,18 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Task</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butterfly &amp; Botanical Photo Gallery</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .gallery img:hover { transform: scale(1.03); }
+  </style>
 </head>
 <body>
-    <Center>
-    <h1>BUTTERFLY GALLERY</h1>
-   <img src="../Day11/assests/image/flower1.jpg" alt="Flower" width="200" length="300"> 
-   <img src="../Day11/assests/image/flower2.jpg" alt="Flower" width="200" length="300">
-   <img src="../Day11/assests/image/flower3.jpg" alt="Flower" width="200" length="300">
-   <img src="../Day11/assests/image/flower4.jpg" alt="Flower" width="200" length="300">
-  
+  <div class="container">
+    <h1>BUTTERFLY &amp; FLORAL GALLERY</h1>
+    <div class="gallery">
+      <img src="assests/image/flower1.jpg" alt="Flower &amp; Butterfly 1">
+      <img src="assests/image/flower2.jpg" alt="Flower &amp; Butterfly 2">
+      <img src="assests/image/flower3.jpg" alt="Flower &amp; Butterfly 3">
+      <img src="assests/image/flower4.jpg" alt="Flower &amp; Butterfly 4">
+    </div>
+  </div>
 </body>
-</Center>
 </html>

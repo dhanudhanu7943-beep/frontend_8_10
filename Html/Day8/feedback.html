@@ -1,30 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>feedback</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Feedback Form</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+    }
+    .form-card {
+      max-width: 480px;
+      width: 100%;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; font-size: 22px; border-bottom: 2px solid #059669; padding-bottom: 8px; }
+    label { font-size: 14px; font-weight: 600; color: #334155; margin-bottom: 4px; display: block; }
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    .radio-group {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 14px;
+    }
+    .radio-option {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      background: #059669;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h1>Feedback Form</h1>
-    <form>
-        <label>Full Name:</label><br>
-        <input type="text" name="fullname" placeholder="Enter your name"><br><br>
+  <div class="form-card">
+    <h1>Customer Feedback Form</h1>
+    <form onsubmit="event.preventDefault(); alert('Feedback submitted! Thank you.');">
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter your name" required>
 
-        <label>Email:</label><br>
-        <input type="email" name="email" placeholder="Enter your email"><br><br>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <label>Rate Our Service:</label><br>
-        <input type="radio" name="rating"> Excellent<br>
-        <input type="radio" name="rating"> Good<br>
-        <input type="radio" name="rating"> Average<br>
-        <input type="radio" name="rating"> Poor<br>
-        <br><br>
+      <label>Rate Our Service:</label>
+      <div class="radio-group">
+        <div class="radio-option"><input type="radio" id="r1" name="rating" value="excellent" required> <label for="r1" style="display:inline;">⭐ Excellent</label></div>
+        <div class="radio-option"><input type="radio" id="r2" name="rating" value="good"> <label for="r2" style="display:inline;">👍 Good</label></div>
+        <div class="radio-option"><input type="radio" id="r3" name="rating" value="average"> <label for="r3" style="display:inline;">👌 Average</label></div>
+        <div class="radio-option"><input type="radio" id="r4" name="rating" value="poor"> <label for="r4" style="display:inline;">👎 Poor</label></div>
+      </div>
 
-        <label>Your Feedback:</label><br>
-        <textarea ></textarea><br><br>
+      <label for="feedback">Your Detailed Feedback:</label>
+      <textarea id="feedback" name="feedback" rows="4" placeholder="Tell us how we can improve..." required></textarea>
 
-        <input type="submit" value="Submit">
+      <input type="submit" value="Submit Feedback">
     </form>
+  </div>
 </body>
 </html>

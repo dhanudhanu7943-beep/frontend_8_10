@@ -1,77 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Academy Registration &amp; Batch Matrix</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #6366f1; padding-bottom: 8px; font-size: 24px; }
+    h2 { color: #4338ca; font-size: 20px; margin-top: 28px; }
+    label { font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 4px; display: block; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea, input[type="file"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      margin-bottom: 12px;
+    }
+    .btn-group { display: flex; gap: 10px; margin-top: 8px; }
+    input[type="submit"] {
+      background: #6366f1;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    input[type="reset"] {
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 10px;
+      text-align: left;
+    }
+    th { background: #eef2ff; color: #4338ca; }
+    .status-active { color: #059669; font-weight: bold; }
+    hr { border: 0; border-top: 1px solid #e2e8f0; margin: 28px 0; }
+  </style>
 </head>
 <body>
-    <h1>Resigtration From</h1>
-    <form>
-        <label for="User name">Enter the Student Name:</label>
-        <input type="Name" placeholder="Enter the Name" id="User name"><br>
-        <br>
-        <label for="Mobile">Enter the Mobile no:</label>
-        <input type="tel" placeholder="Mobile No" id="Mobile"  minlength="10" maxlength="10">
-        <br><br>
-        <label for="Email">Enter the Email:</label>
-        <input type="email" placeholder="Email" id="Email">
-        <br><br>
-        <label for="Age">Enter the Age:</label>
-        <input type="Age" placeholder=" age" id="Age">
-        <br><br>
-        <label >Gender:</label>
-        <input type="radio" name="gender">male
-         <input type="radio" name="gender">Female
-         <br><br>
+  <div class="container">
+    <h1>Student Academy Registration Form</h1>
+    <form onsubmit="event.preventDefault(); alert('Student registered successfully!');">
+      <label for="username">Student Name:</label>
+      <input type="text" id="username" placeholder="Enter student name" required>
 
-         <label>Course:</label><br>
-        <select >
-            <option>Select Position</option>
-            <option>Software Developer</option>
-            <option>Web Designer</option>
-            <option>UI/UX Designer</option>
-            <option>Data Analyst</option>
-        </select><br><br>
-            <label>Address:</label><br>
-            <textarea rows="4" cols="30" placeholder="Enter your address"></textarea><br><br>
-          <br>
-       <label>Upload Resume:</label><br>
-        <input type="file" name="resume"><br><br>
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" placeholder="10-digit mobile" minlength="10" maxlength="10" required>
 
-        <input type="reset" value="Reset">
-         <input type="submit" value="submit">
-         <br>
-    <hr>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" placeholder="name@example.com" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" min="15" max="80" placeholder="Age" required>
+
+      <label>Gender:</label>
+      <div style="margin-bottom: 12px;">
+        <label style="display:inline; margin-right: 12px;"><input type="radio" name="gender" value="male" required> Male</label>
+        <label style="display:inline;"><input type="radio" name="gender" value="female"> Female</label>
+      </div>
+
+      <label for="course">Course Track:</label>
+      <select id="course" required>
+        <option value="">-- Select Course --</option>
+        <option>Software Developer (Full Stack)</option>
+        <option>Web Designer (UI/UX)</option>
+        <option>Data Analyst</option>
+      </select>
+
+      <label for="address">Address:</label>
+      <textarea id="address" rows="3" placeholder="Enter residential address"></textarea>
+
+      <label for="resume">Upload Resume:</label>
+      <input type="file" id="resume">
+
+      <div class="btn-group">
+        <input type="submit" value="Register Student">
+        <input type="reset" value="Reset Form">
+      </div>
     </form>
-    <table border="5" >
-        <thead>
-        <th>SLA ID</th>
-        <th>Student Name</th>
-        <th>Course</th>
-        <th>Email</th>
-        <th>Mobile Number</th>
-        <th>Status</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>101</td>
-                <td>dhanu</td>
-                <td>FS</td>
-                <td>dhanu@gamil.com</td>
-                <td>257656766</td>
-                <td>Active</td>
-            </tr>
 
-            <tr>
-                <td>102</td>
-                <td>moni</td>
-                <td>FS</td>
-                <td>moni@gamil.com</td>
-                <td>257656766</td>
-                <td>Active</td>
-            </tr>
-        </tbody>
+    <hr>
+
+    <h2>SLA Student Batch Matrix</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>SLA ID</th>
+          <th>Student Name</th>
+          <th>Course</th>
+          <th>Email</th>
+          <th>Mobile Number</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>101</td>
+          <td>Dhanu</td>
+          <td>Full Stack</td>
+          <td>dhanu@gmail.com</td>
+          <td>8967453211</td>
+          <td><span class="status-active">Active</span></td>
+        </tr>
+        <tr>
+          <td>102</td>
+          <td>Moni</td>
+          <td>Web Development</td>
+          <td>moni@gmail.com</td>
+          <td>9876543210</td>
+          <td><span class="status-active">Active</span></td>
+        </tr>
+      </tbody>
     </table>
+  </div>
 </body>
 </html>

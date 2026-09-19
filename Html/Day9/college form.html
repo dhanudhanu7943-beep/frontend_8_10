@@ -1,95 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>college</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Admission Application &amp; Records</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #0284c7; padding-bottom: 8px; font-size: 24px; }
+    h2 { color: #0369a1; font-size: 20px; margin-top: 28px; }
+    label { font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 4px; display: block; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="number"], select, textarea, input[type="file"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      margin-bottom: 12px;
+    }
+    .btn-group { display: flex; gap: 10px; margin-top: 8px; }
+    input[type="submit"] {
+      background: #0284c7;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    input[type="reset"] {
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 10px;
+      text-align: left;
+    }
+    th { background: #f0f9ff; color: #0369a1; }
+    .status-approved { color: #059669; font-weight: bold; }
+    .status-pending { color: #d97706; font-weight: bold; }
+    hr { border: 0; border-top: 1px solid #e2e8f0; margin: 28px 0; }
+  </style>
 </head>
 <body>
-    <h1>College Admission Form</h1>
-    <form>
-         <label>Student Name:</label><br>
-        <input type="text"><br><br>
+  <div class="container">
+    <h1>College Admission Registration Form</h1>
+    <form onsubmit="event.preventDefault(); alert('Admission Form Submitted!');">
+      <label for="sname">Student Name:</label>
+      <input type="text" id="sname" placeholder="Enter student name" required>
 
-        <label>Father Name:</label><br>
-        <input type="text"><br><br>
+      <label for="fname">Father Name:</label>
+      <input type="text" id="fname" placeholder="Enter father name" required>
 
-        <label>Mother Name:</label><br>
-        <input type="text"><br><br>
+      <label for="mname">Mother Name:</label>
+      <input type="text" id="mname" placeholder="Enter mother name" required>
 
-        <label>Email:</label><br>
-        <input type="email"><br><br>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" placeholder="name@example.com" required>
 
-        <label>Phone:</label><br>
-        <input type="tel"><br><br>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" placeholder="10-digit phone" required>
 
-        <label>Date of Birth:</label><br>
-        <input type="date"><br><br>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" required>
 
-        <label>Gender:</label><br>
-        <input type="radio" name="gender"> Male
-        <input type="radio" name="gender"> Female
-         <br><br>
+      <label>Gender:</label>
+      <div style="margin-bottom: 12px;">
+        <label style="display:inline; margin-right: 12px;"><input type="radio" name="gender" value="male" required> Male</label>
+        <label style="display:inline;"><input type="radio" name="gender" value="female"> Female</label>
+      </div>
 
-        <label>Department:</label><br>
-        <select>
-            <option>Select Department</option>
-            <option>CSE</option>
-            <option>ECE</option>
-            <option>EEE</option>
-            <option>IT</option>
-        </select>
-        <br><br>
+      <label for="dept">Department:</label>
+      <select id="dept" required>
+        <option value="">-- Select Department --</option>
+        <option>CSE</option>
+        <option>ECE</option>
+        <option>EEE</option>
+        <option>IT</option>
+      </select>
 
-        <label>Percentage:</label><br>
-        <input type="number" min="0" max="10"><br><br>
+      <label for="pct">12th Standard Percentage (%):</label>
+      <input type="number" id="pct" min="0" max="100" placeholder="e.g. 90" required>
 
-        <label>Address:</label><br>
-        <textarea></textarea><br><br>
+      <label for="addr">Permanent Address:</label>
+      <textarea id="addr" rows="3" placeholder="Enter full address"></textarea>
 
-        <label>Passport Size Photo:</label><br>
-        <input type="file"><br><br>
+      <label for="photo">Passport Size Photograph:</label>
+      <input type="file" id="photo" accept="image/*">
 
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
-
+      <div class="btn-group">
+        <input type="submit" value="Submit Application">
+        <input type="reset" value="Reset Form">
+      </div>
     </form>
 
-    <br><br>
     <hr>
 
-    <h2>Admission Details</h2>
-
-    <table border="1">
+    <h2>Admission Candidate Records</h2>
+    <table>
+      <thead>
         <tr>
-            <th>Application ID</th>
-            <th>Student Name</th>
-            <th>Department</th>
-            <th>Percentage</th>
-            <th>Email</th>
-            <th>Admission Status</th>
+          <th>Application ID</th>
+          <th>Student Name</th>
+          <th>Department</th>
+          <th>Percentage</th>
+          <th>Email</th>
+          <th>Admission Status</th>
         </tr>
-
+      </thead>
+      <tbody>
         <tr>
-            <td>1001</td>
-            <td>Arun Kumar</td>
-            <td>CSE</td>
-            <td>92%</td>
-            <td>arun@gmail.com</td>
-            <td>Pending</td>
+          <td>1001</td>
+          <td>Arun Kumar</td>
+          <td>CSE</td>
+          <td>92%</td>
+          <td>arun@gmail.com</td>
+          <td><span class="status-pending">Pending</span></td>
         </tr>
-
         <tr>
-            <td>1002</td>
-            <td>Famitha</td>
-            <td>ECE</td>
-            <td>89%</td>
-            <td>famitha@gmail.com</td>
-            <td>Approved</td>
+          <td>1002</td>
+          <td>Famitha</td>
+          <td>ECE</td>
+          <td>89%</td>
+          <td>famitha@gmail.com</td>
+          <td><span class="status-approved">Approved</span></td>
         </tr>
-
+      </tbody>
     </table>
-
-    </form>
+  </div>
 </body>
 </html>

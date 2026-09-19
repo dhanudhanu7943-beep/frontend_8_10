@@ -1,34 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semantic 2</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non-Semantic Layout Demonstration (div &amp; span)</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #cbd5e1;
+    }
+    .header-box {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0284c7;
+      margin-bottom: 12px;
+    }
+    .nav-box span {
+      display: inline-block;
+      margin-right: 14px;
+      color: #0369a1;
+      font-weight: 500;
+    }
+    .content-box {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .footer-box {
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+  </style>
 </head>
 <body>
-      <div>
-        <span><b>COMPUTER WORLD</b></span><br>
+  <div class="wrapper">
+    <div class="header-box">
+      <span>COMPUTER WORLD</span>
     </div>
-   <br>
-    <div>
-        <span>Home  </span>
-        <span>About  </span>
-        <span>Services </span>
-        <span>Contact</span>
-    </div>
-<br>
-    <div>
-        <span>
-            A computer is an electronic device that accepts data,
-            processes it, stores it, and produces useful information.
-            Computers are used in schools, offices, hospitals, banks,
-            and many other places.Computer use generally refers to the practical application of a computer system to perform tasks, manage information, or solve problems. It involves entering data (input), processing it according to specific software instructions, and generating a usable result (output). 
-        </span>
-    </div>
-    <br>
 
-    <div>
-        <span> 2026 Computer World</span>
+    <div class="nav-box">
+      <span>Home</span>
+      <span>About</span>
+      <span>Services</span>
+      <span>Contact</span>
     </div>
+
+    <div class="content-box">
+      <span>
+        A computer is an electronic device that accepts data, processes it, stores it, and produces useful information. Computers are used in schools, offices, hospitals, banks, and many other places. Computer use generally refers to the practical application of a computer system to perform tasks, manage information, or solve problems. It involves entering data (input), processing it according to specific software instructions, and generating a usable result (output).
+      </span>
+    </div>
+
+    <div class="footer-box">
+      <span>&copy; 2026 Computer World &bull; Non-Semantic HTML Demonstration</span>
+    </div>
+  </div>
 </body>
 </html>

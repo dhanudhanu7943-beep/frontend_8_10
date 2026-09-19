@@ -1,133 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>table</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Registration &amp; Department Matrix</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #0284c7; padding-bottom: 8px; font-size: 24px; }
+    h2 { color: #0369a1; font-size: 20px; margin-top: 28px; }
+    label { font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 4px; display: block; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, input[type="file"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      margin-bottom: 12px;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .btn-group { display: flex; gap: 10px; margin-top: 8px; }
+    input[type="submit"] {
+      background: #0284c7;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    input[type="reset"] {
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 10px;
+      text-align: left;
+    }
+    th { background: #f0f9ff; color: #0369a1; }
+    hr { border: 0; border-top: 1px solid #e2e8f0; margin: 28px 0; }
+  </style>
 </head>
 <body>
-    <h1>Employee Registration & Employee Report</h1>
-    <form>
-        <label>Employee ID:</label><br>
-        <input type="text" name="empid"><br><br>
+  <div class="container">
+    <h1>Employee Registration &amp; Database Records</h1>
+    <form onsubmit="event.preventDefault(); alert('Employee registered successfully!');">
+      <label for="empid">Employee ID:</label>
+      <input type="text" id="empid" name="empid" placeholder="e.g. EMP-101" required>
 
-        <label>Employee Name:</label><br>
-        <input type="text" name="empname"><br><br>
+      <label for="empname">Employee Name:</label>
+      <input type="text" id="empname" name="empname" placeholder="Enter full name" required>
 
-        <label>Email:</label><br>
-        <input type="email" name="email"><br><br>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="name@company.com" required>
 
-        <label>Mobile:</label><br>
-        <input type="tel" name="mobile"><br><br>
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile" required>
 
-        <label>Department:</label><br>
-        <select name="department">
-            <option>Select Department</option>
-            <option>HR</option>
-            <option>IT</option>
-            <option>Finance</option>
-            <option>Marketing</option>
-            <option>Sales</option>
-        </select><br><br>
+      <label for="dept">Department:</label>
+      <select id="dept" name="department" required>
+        <option value="">-- Select Department --</option>
+        <option>HR</option>
+        <option>IT Engineering</option>
+        <option>Finance</option>
+        <option>Marketing</option>
+        <option>Sales</option>
+      </select>
 
-        <label>Experience (Years):</label><br>
-        <input type="number" name="experience"><br><br>
+      <label for="exp">Experience (Years):</label>
+      <input type="number" id="exp" name="experience" min="0" max="40" placeholder="e.g. 3">
 
-        <label>Salary:</label><br>
-        <input type="number" name="salary"><br><br>
+      <label for="salary">Monthly Salary (&#8377;):</label>
+      <input type="number" id="salary" name="salary" min="0" placeholder="e.g. 50000">
 
-        <label>Skills:</label><br>
-        <input type="checkbox" name="skills" value="HTML"> HTML
-        <input type="checkbox" name="skills" value="CSS"> CSS
-        <input type="checkbox" name="skills" value="JavaScript"> JavaScript
-        <input type="checkbox" name="skills" value="Java"> Java
-        <input type="checkbox" name="skills" value="PHP"> PHP
-        <br><br>
+      <label>Technical Skills:</label>
+      <div class="checkbox-group">
+        <label style="display:inline;"><input type="checkbox" name="skills" value="HTML"> HTML5</label>
+        <label style="display:inline;"><input type="checkbox" name="skills" value="CSS"> CSS3</label>
+        <label style="display:inline;"><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+        <label style="display:inline;"><input type="checkbox" name="skills" value="Java"> Java</label>
+        <label style="display:inline;"><input type="checkbox" name="skills" value="PHP"> PHP</label>
+      </div>
 
-        <label>Resume Upload:</label><br>
-        <input type="file" name="resume"><br><br>
+      <label for="resume">Upload Resume:</label>
+      <input type="file" id="resume" name="resume">
 
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
-
+      <div class="btn-group">
+        <input type="submit" value="Register Employee">
+        <input type="reset" value="Reset Form">
+      </div>
     </form>
-    <br>
+
     <hr>
-    <table border="5">
-        <thead>
-        <th>Employee ID</th>
-        <th>Employee Name</th>
-        <th>Email</th>
-        <th>Mobile</th>
-        <th>Department</th>
-        <th>Experience</th>
-        <th>Salary</th>
-        <th>Skills</th>
-        <th>Resume Upload</th>
-         </thead>
-    <tbody>
-        <tr>
-            <td>101</td>
-            <td>Dhanu</td>
-            <td>dhanu@gmail.com</td>
-            <td>2345677889</td>
-            <td>Fs</td>
-            <td>2</td>
-            <td>22,000</td>
-            <td>React,sql</td>
-            <td><input type="file" name="resume"></td>          
-        </tr>
-        <br>
-          <tr>
-            <td>102</td>
-            <td>Moni</td>
-            <td>moni@gmail.com</td>
-            <td>2445677089</td>
-            <td>Fs</td>
-            <td>2</td>
-            <td>25,000</td>
-            <td>React,sql,css</td>
-            <td><input type="file" name="resume"></td>
-        </tr>
-          
-        <tr>
-            <td>103</td>
-            <td>Anpu</td>
-            <td>anpu@gmail.com</td>
-            <td>2444687089</td>
-            <td>web develpment</td>
-            <td>3</td>
-            <td>20,000</td>
-            <td>React,html,css</td>
-            <td><input type="file" name="resume"></td>
-        </tr>
 
+    <h2>Employee Records Directory</h2>
+    <table>
+      <thead>
         <tr>
-            <td>104</td>
-            <td>Gayu</td>
-            <td>gayu@gmail.com</td>
-            <td>024468689</td>
-            <td>web develpment</td>
-            <td>2</td>
-            <td>28,000</td>
-            <td>React,html,css,sql</td>
-            <td><input type="file" name="resume"></td>
-
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Department</th>
+          <th>Experience</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>EMP-101</td>
+          <td>Kavitha R</td>
+          <td>kavitha@company.com</td>
+          <td>9876543210</td>
+          <td>IT Engineering</td>
+          <td>4 Yrs</td>
+          <td>&#8377;65,000</td>
         </tr>
         <tr>
-            <td>105</td>
-            <td>Kavi</td>
-            <td>kavi@gmail.com</td>
-            <td>3245667649</td>
-            <td>web develpment</td>
-            <td>4</td>
-            <td>68,000</td>
-            <td>React,html,css,sql</td>
-            <td><input type="file" name="resume"></td>
-
+          <td>EMP-102</td>
+          <td>Suresh P</td>
+          <td>suresh@company.com</td>
+          <td>8765432109</td>
+          <td>Finance</td>
+          <td>6 Yrs</td>
+          <td>&#8377;75,000</td>
         </tr>
-    </tbody>
-
+      </tbody>
     </table>
+  </div>
 </body>
 </html>

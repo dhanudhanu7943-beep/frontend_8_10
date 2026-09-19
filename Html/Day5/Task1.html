@@ -1,83 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semantic</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Scoops Ice Cream Shop &bull; Semantic Layout</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #fdf2f8;
+      margin: 0;
+      padding: 24px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 20px;
+      border: 1px solid #fbcfe8;
+      box-shadow: 0 4px 20px rgba(236, 72, 153, 0.08);
+    }
+    header {
+      text-align: center;
+      border-bottom: 2px solid #fbcfe8;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      color: #db2777;
+      margin: 0 0 10px;
+    }
+    nav a {
+      color: #be185d;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 10px;
+    }
+    .flavor-card {
+      background: #fff1f2;
+      border-left: 4px solid #f43f5e;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .flavor-card h3 { margin: 0 0 4px; color: #9f1239; }
+    .price-tag { color: #e11d48; font-weight: bold; }
+    aside {
+      background: #fdf4ff;
+      border: 1px dashed #d946ef;
+      padding: 16px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+    footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 16px;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-     <header>
-        <h1><span style="color: rgb(235, 10, 167);">Ice Cream Shop</span></h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Flavours</a>
-            <a href="#">Offers</a>
-            <a href="#">Contact</a>
-        </nav>
-     </header>
-     <hr>
-  <main>
-     <section>
-        <h3>Welcome to Our Ice Cream Shop</h3>
-        <p>Enjoy delicious ice creams made with fresh milk and natural fruits.
-            We have a variety of flavours for everyone.</p>
-     <hr>       
- <article>
-  <h1><u>Flavours</u></h1>  
-<h3>Strawberry Delight</h3>
-<p>
-Creamy strawberry ice cream topped with fresh strawberries and chocolate syrup.
-<span style="color: rgb(214, 79, 17);">Price: 120</span>
-</p>
-</article>
+  <div class="container">
+    <header>
+      <h1>Sweet Scoops Ice Cream Shop</h1>
+      <nav>
+        <a href="#home">Home</a> &bull;
+        <a href="#flavours">Flavours</a> &bull;
+        <a href="#offers">Offers</a> &bull;
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-<article>
-<h3> Chocolate Heaven</h3>
-<p>
-Rich chocolate ice cream with chocolate chips and brownie pieces.
-<span style="color: rgb(214, 79, 17);">Price: 150</span>
-</p>
-</article>
+    <main>
+      <section id="home">
+        <h2>Welcome to Our Ice Cream Shop</h2>
+        <p>Enjoy delicious artisanal ice creams made with fresh organic milk and natural fruits. We have a variety of flavours for everyone.</p>
+      </section>
 
-<article>
-<h3>Mango Magic</h3>
-<p>
-Fresh mango ice cream made from real Alphonso mangoes.
-<span style="color: rgb(214, 79, 17);">Price: 150</span>
-</p>
-</article>
+      <section id="flavours">
+        <h2><u>Featured Flavours</u></h2>  
+        
+        <article class="flavor-card">
+          <h3>Strawberry Delight</h3>
+          <p>Creamy strawberry ice cream topped with fresh sliced strawberries and chocolate syrup.</p>
+          <div class="price-tag">Price: &#8377;120</div>
+        </article>
 
-     </section>
-<hr>
- <aside>
+        <article class="flavor-card">
+          <h3>Chocolate Heaven</h3>
+          <p>Rich Belgian chocolate ice cream with chocolate chips and warm brownie pieces.</p>
+          <div class="price-tag">Price: &#8377;150</div>
+        </article>
 
-<h1><u> Special Offers</u></h1>
+        <article class="flavor-card">
+          <h3>Mango Magic</h3>
+          <p>Fresh mango ice cream made from real seasonal Alphonso mangoes.</p>
+          <div class="price-tag">Price: &#8377;150</div>
+        </article>
+      </section>
 
-<ul>
-<li>Buy 1 Get 1 Free (Friday)</li>
-<li>10% Student Discount</li>
-<li>Family Combo Available</li>
-<li>Free Toppings</li>
-</ul>
+      <aside id="offers">
+        <h3><u>Special Offers &amp; Discounts</u></h3>
+        <ul>
+          <li>Buy 1 Get 1 Free (Every Friday)</li>
+          <li>10% Student Discount with Valid ID</li>
+          <li>Family Combo Pack Available</li>
+          <li>Free Extra Sprinkles &amp; Toppings</li>
+        </ul>
 
-<h3> Opening Hours</h3>
+        <h4>Store Opening Hours</h4>
+        <p>Monday &ndash; Sunday<br><strong>10:00 AM &ndash; 10:00 PM</strong></p>
+      </aside>
+    </main>
 
-<p>
-Monday - Sunday<br>
-10:00 AM - 10:00 PM
-</p>
-</aside>
-
-    
-  </main>
-  <hr>
-  <footer>
-<p> 2026 Sweet Scoops Ice Cream Shop | All Rights Reserved</p>
-<h4>contact:7856453434</h4>
-</footer>
-   
+    <footer id="contact">
+      <p>&copy; 2026 Sweet Scoops Ice Cream Shop | All Rights Reserved</p>
+      <p>Customer Care Helpline: <strong>+91 7856453434</strong></p>
+    </footer>
+  </div>
 </body>
 </html>
-
-
-

@@ -1,96 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Patient Intake &amp; Appointments</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #059669; padding-bottom: 8px; font-size: 24px; }
+    label { font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 4px; display: block; }
+    input[type="text"], input[type="number"], input[type="date"], select, textarea, input[type="file"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      margin-bottom: 12px;
+    }
+    .btn-group { display: flex; gap: 10px; margin-top: 8px; }
+    input[type="submit"] {
+      background: #059669;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    input[type="reset"] {
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <h2> Hospital Patient Registration</h2>
-     <form>
+  <div class="container">
+    <h1>Hospital Patient Registration (OPD Intake)</h1>
+    <form onsubmit="event.preventDefault(); alert('Patient registered successfully!');">
+      <label for="pid">Patient ID:</label>
+      <input type="text" id="pid" name="pid" placeholder="e.g. PAT-901" required>
 
-        <label>Patient ID:</label><br>
-        <input type="text" name="pid"><br><br>
+      <label for="pname">Patient Full Name:</label>
+      <input type="text" id="pname" name="pname" placeholder="Enter patient name" required>
 
-        <label>Patient Name:</label><br>
-        <input type="text" name="pname"><br><br>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="1" max="120" required>
 
-        <label>Age:</label><br>
-        <input type="number" name="age"><br><br>
+      <label>Gender:</label>
+      <div style="margin-bottom: 12px;">
+        <label style="display:inline; margin-right: 12px;"><input type="radio" name="gender" value="male" required> Male</label>
+        <label style="display:inline; margin-right: 12px;"><input type="radio" name="gender" value="female"> Female</label>
+        <label style="display:inline;"><input type="radio" name="gender" value="other"> Other</label>
+      </div>
 
-        <label>Gender:</label><br>
-        <input type="radio" name="gender"> Male
-        <input type="radio" name="gender"> Female
-        <input type="radio" name="gender"> Other
-        <br><br>
+      <label for="bg">Blood Group:</label>
+      <select id="bg" required>
+        <option value="">-- Select Blood Group --</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>O+</option>
+        <option>O-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+      </select>
 
-        <label>Blood Group:</label><br>
-        <select>
-            <option>Select Blood Group</option>
-            <option>A+</option>
-            <option>A-</option>
-            <option>B+</option>
-            <option>B-</option>
-            <option>O+</option>
-            <option>O-</option>
-        </select>
-        <br><br>
+      <label for="doctor">Consulting Doctor:</label>
+      <select id="doctor" required>
+        <option value="">-- Select Doctor --</option>
+        <option>Dr. Kumar (Cardiology)</option>
+        <option>Dr. Priya (General Medicine)</option>
+        <option>Dr. Rajesh (Orthopedics)</option>
+      </select>
 
-        <label>Doctor:</label><br>
-        <select>
-            <option>Select Doctor</option>
-            <option>Dr. Kumar</option>
-            <option>Dr. Priya</option>
-            <option>Dr. Rajesh</option>
-        </select>
-        <br><br>
+      <label for="appdate">Appointment Date:</label>
+      <input type="date" id="appdate" required>
 
-        <label>Appointment Date:</label><br>
-        <input type="date"><br><br>
+      <label for="symptoms">Symptoms &amp; Clinical Notes:</label>
+      <textarea id="symptoms" rows="3" placeholder="Describe symptoms..."></textarea>
 
-        <label>Symptoms:</label><br>
-        <textarea rows="4" cols="30"></textarea><br><br>
+      <label for="report">Medical History / Report Upload:</label>
+      <input type="file" id="report">
 
-        <label>Medical Report Upload:</label><br>
-        <input type="file"><br><br>
-
-        <input type="submit" value="Register">
-        <input type="reset" value="Clear">
-
+      <div class="btn-group">
+        <input type="submit" value="Register Patient">
+        <input type="reset" value="Clear Form">
+      </div>
     </form>
-
-    <hr>
-
-    <h2>Patient Details</h2>
-
-    <table border="1">
-        <tr>
-            <th>Patient ID</th>
-            <th>Patient Name</th>
-            <th>Doctor</th>
-            <th>Blood Group</th>
-            <th>Appointment Date</th>
-            <th>Status</th>
-        </tr>
-
-        <tr>
-            <td>P101</td>
-            <td>Rahul</td>
-            <td>Dr. Kumar</td>
-            <td>O+</td>
-            <td>22-07-2026</td>
-            <td>Confirmed</td>
-        </tr>
-
-        <tr>
-            <td>P102</td>
-            <td>Priya</td>
-            <td>Dr. Anitha</td>
-            <td>A+</td>
-            <td>23-07-2026</td>
-            <td>Pending</td>
-        </tr>
-
-    </table>
+  </div>
 </body>
 </html>

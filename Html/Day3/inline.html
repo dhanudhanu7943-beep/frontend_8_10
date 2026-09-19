@@ -1,23 +1,56 @@
-<html>
-    <head>
-        <title>Inline Level</title>
-    </head>
-    <body>
-        <p><b>This is Inline Element</b></p>
-        <hr>
-        <h2>Inline define</h2>
-        <p><i>Inline elements are HTML elements that do not start on a new line. They only take up the amount of space required by their content and are displayed within the same line as surrounding text or other inline elements. They are mainly used to format text, create hyperlinks, or add small pieces of content inside a block-level element such as a paragraph.<i></p>
-        <hr>
-        <h2><b>Underlined</b></h2>  
-        <p><u>The(underline) element is an inline element used to display text with an underline. It is commonly used to indicate non-textual annotations or to visually underline specific words or phrases.</u></p>  
-        <hr>
-       <h2>Span detail</h2>.
-       <p>The  element is an inline HTML element used to group or style a small portion of text or other inline elements. <span style="color: red;"> does not add any visual change by  but is commonly used with CSS or JavaScript to apply styles or behavior</span> to specific content.</p>
-       <hr>
-       <h2>Subscript</h2>
-       <P>Water formula:H<sub>2</sub>0</P>
-       <h2>super script</h2>
-       <p>Math foramula:x<sup>2</sup></p></p> 
-    
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inline HTML Elements</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #ec4899; padding-bottom: 10px; }
+    h2 { color: #db2777; font-size: 18px; margin-top: 20px; }
+    hr { border: 0; border-top: 1px solid #f1f5f9; margin: 16px 0; }
+    .highlight-span { color: #dc2626; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Inline HTML Elements Showcase</h1>
+    <p><b>This is an Inline Element demonstration.</b></p>
+    <hr>
+
+    <h2>Definition of Inline Elements</h2>
+    <p><i>Inline elements are HTML elements that do not start on a new line. They only take up the amount of space required by their content and are displayed within the same line as surrounding text or other inline elements. They are mainly used to format text, create hyperlinks, or add small pieces of content inside a block-level element such as a paragraph.</i></p>
+    <hr>
+
+    <h2>Underlined Text (&lt;u&gt;)</h2>  
+    <p><u>The underline (&lt;u&gt;) element is an inline element used to display text with an underline. It is commonly used to indicate non-textual annotations or to visually underline specific words or phrases.</u></p>  
+    <hr>
+
+    <h2>Span Element (&lt;span&gt;)</h2>
+    <p>The <code>&lt;span&gt;</code> element is an inline HTML element used to group or style a small portion of text or other inline elements. <span class="highlight-span">It does not add any visual change by default, but is commonly used with CSS or JavaScript to apply styles or behavior</span> to specific content.</p>
+    <hr>
+
+    <h2>Subscript (&lt;sub&gt;)</h2>
+    <p>Chemical formula of Water: <strong>H<sub>2</sub>O</strong></p>
+
+    <h2>Superscript (&lt;sup&gt;)</h2>
+    <p>Mathematical formula: <strong>x<sup>2</sup> + y<sup>2</sup> = r<sup>2</sup></strong></p>
+  </div>
+</body>
 </html>

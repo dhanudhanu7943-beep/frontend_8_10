@@ -1,0 +1,78 @@
+1. What is React?
+     React is a JavaScript library used to build user interfaces (UI), especially for web applications.
+It helps us create interactive and reusable UI components.
+
+   Simple: React = JavaScript library for building UI.
+
+
+2. Is React a library or framework?
+
+React is a library, not a framework.
+React mainly focuses on the UI layer. We can add other libraries for routing, state management, API calls, etc.
+
+React is a JavaScript library developed by Meta for building user interfaces.
+
+
+3. What is a Component?
+
+A component is a small, reusable part of a user interface.
+
+Examples:
+ Navbar
+ Button
+ Login Form
+ Card
+ Footer
+
+
+4. Why are Components important?
+
+Components are important because they make applications:
+
+Reusable – use the same component multiple times.
+Maintainable – easier to update code.
+Organized – divide a large UI into smaller parts.
+Reusable – avoid writing the same code again.
+Instead of creating 10 separate button codes, create one Button component and reuse it.
+
+
+5. What is JSX?
+
+JSX stands for JavaScript XML.
+It allows us to write HTML-like syntax inside JavaScript.
+const element = <h1>Hello React</h1>;
+JSX makes React code easier to write and understand.
+JSX is not exactly HTML; it is syntax that gets transformed into JavaScript.
+
+
+6. What is Virtual DOM?
+
+   The Virtual DOM is a lightweight JavaScript representation of the Real DOM.
+   When something changes in a React application, React first updates the Virtual DOM, compares it with the previous      version, and then updates only the necessary parts of the Real DOM.
+
+
+7. What is the Real DOM?
+
+DOM (Document Object Model) represents the actual HTML elements of a webpage in the browser.
+
+For example:
+ <h1>Hello</h1>
+ <button>Click</button>
+These actual elements are part of the Real DOM.
+
+Simple:
+Real DOM = Actual webpage structure managed by the browser.
+
+8. What is Reconciliation?
+
+Reconciliation is the process React uses to compare the previous Virtual DOM with the new Virtual DOM and determine what needs to be changed in the Real DOM.
+Example:
+ Before:
+  <h1>Hello</h1>
+After:
+ <h1>Welcome</h1>
+
+React identifies that only the text changed and updates the necessary DOM part.
+Easy flow to remember:
+State/Data changes → New Virtual DOM → Compare with old Virtual DOM → Reconciliation → Update necessary Real DOM
+

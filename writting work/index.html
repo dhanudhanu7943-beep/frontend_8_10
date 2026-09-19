@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handwritten Notes &amp; Assignment Sheets &bull; Study Archive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(236, 72, 153, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-4 sm:p-8 flex flex-col">
+  <div class="max-w-6xl mx-auto w-full space-y-8 flex-1">
+    
+    <!-- Header -->
+    <header class="glass-card p-6 sm:p-8 rounded-3xl border border-pink-500/30 bg-gradient-to-br from-pink-950/40 via-slate-900 to-slate-950">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-semibold">
+            <span>📝 Study Archive &bull; Handwritten Assignments</span>
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Handwritten Practice Sheets &amp; Concept Notes
+          </h1>
+          <p class="text-sm text-slate-300 max-w-2xl">
+            High-resolution scanned assignment sheets covering frontend fundamentals, layout diagrams, DOM flows, and syntax rules.
+          </p>
+        </div>
+        <a href="../index.html" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs font-semibold transition">
+          &larr; Back to Hub
+        </a>
+      </div>
+    </header>
+
+    <!-- Sheets Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
+          <a href="1st.jpeg" target="_blank" class="relative block overflow-hidden bg-slate-900 aspect-[3/4] group">
+            <img src="1st.jpeg" alt="Sheet 1: Core Fundamentals & HTML Structure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 right-3 px-2 py-1 rounded-lg bg-slate-950/80 text-[10px] font-mono text-pink-300 border border-pink-500/30">
+              Page 1
+            </span>
+          </a>
+          <div class="p-5 space-y-2">
+            <h3 class="font-bold text-white text-sm group-hover:text-pink-300 transition">Sheet 1: Core Fundamentals & HTML Structure</h3>
+            <p class="text-xs text-slate-400 line-clamp-2">Detailed notes on document declarations, semantic hierarchy, and element structures.</p>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-500">1st.jpeg</span>
+              <a href="1st.jpeg" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 text-xs font-semibold transition">
+                View Full Size &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
+          <a href="2nd.jpeg" target="_blank" class="relative block overflow-hidden bg-slate-900 aspect-[3/4] group">
+            <img src="2nd.jpeg" alt="Sheet 2: Layout & Box Model Rules" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 right-3 px-2 py-1 rounded-lg bg-slate-950/80 text-[10px] font-mono text-pink-300 border border-pink-500/30">
+              Page 2
+            </span>
+          </a>
+          <div class="p-5 space-y-2">
+            <h3 class="font-bold text-white text-sm group-hover:text-pink-300 transition">Sheet 2: Layout & Box Model Rules</h3>
+            <p class="text-xs text-slate-400 line-clamp-2">Margin, padding, border breakdowns and element flow diagrams.</p>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-500">2nd.jpeg</span>
+              <a href="2nd.jpeg" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 text-xs font-semibold transition">
+                View Full Size &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
+          <a href="3rd.jpeg" target="_blank" class="relative block overflow-hidden bg-slate-900 aspect-[3/4] group">
+            <img src="3rd.jpeg" alt="Sheet 3: Styling Properties & Selectors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 right-3 px-2 py-1 rounded-lg bg-slate-950/80 text-[10px] font-mono text-pink-300 border border-pink-500/30">
+              Page 3
+            </span>
+          </a>
+          <div class="p-5 space-y-2">
+            <h3 class="font-bold text-white text-sm group-hover:text-pink-300 transition">Sheet 3: Styling Properties & Selectors</h3>
+            <p class="text-xs text-slate-400 line-clamp-2">CSS selector specificity, cascading hierarchy, and typography rules.</p>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-500">3rd.jpeg</span>
+              <a href="3rd.jpeg" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 text-xs font-semibold transition">
+                View Full Size &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
+          <a href="4th.jpeg" target="_blank" class="relative block overflow-hidden bg-slate-900 aspect-[3/4] group">
+            <img src="4th.jpeg" alt="Sheet 4: Flexbox & Alignment Blueprints" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 right-3 px-2 py-1 rounded-lg bg-slate-950/80 text-[10px] font-mono text-pink-300 border border-pink-500/30">
+              Page 4
+            </span>
+          </a>
+          <div class="p-5 space-y-2">
+            <h3 class="font-bold text-white text-sm group-hover:text-pink-300 transition">Sheet 4: Flexbox & Alignment Blueprints</h3>
+            <p class="text-xs text-slate-400 line-clamp-2">Flex container axes, justify-content, align-items, and responsive layouts.</p>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-500">4th.jpeg</span>
+              <a href="4th.jpeg" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 text-xs font-semibold transition">
+                View Full Size &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
+          <a href="5th.jpeg" target="_blank" class="relative block overflow-hidden bg-slate-900 aspect-[3/4] group">
+            <img src="5th.jpeg" alt="Sheet 5: CSS Grid Matrix & Areas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 right-3 px-2 py-1 rounded-lg bg-slate-950/80 text-[10px] font-mono text-pink-300 border border-pink-500/30">
+              Page 5
+            </span>
+          </a>
+          <div class="p-5 space-y-2">
+            <h3 class="font-bold text-white text-sm group-hover:text-pink-300 transition">Sheet 5: CSS Grid Matrix & Areas</h3>
+            <p class="text-xs text-slate-400 line-clamp-2">Grid template rows/columns, gap spacing, and fractional unit calculations.</p>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-500">5th.jpeg</span>
+              <a href="5th.jpeg" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 text-xs font-semibold transition">
+                View Full Size &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
+          <a href="6th.jpeg" target="_blank" class="relative block overflow-hidden bg-slate-900 aspect-[3/4] group">
+            <img src="6th.jpeg" alt="Sheet 6: JavaScript Syntax & Logic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 right-3 px-2 py-1 rounded-lg bg-slate-950/80 text-[10px] font-mono text-pink-300 border border-pink-500/30">
+              Page 6
+            </span>
+          </a>
+          <div class="p-5 space-y-2">
+            <h3 class="font-bold text-white text-sm group-hover:text-pink-300 transition">Sheet 6: JavaScript Syntax & Logic</h3>
+            <p class="text-xs text-slate-400 line-clamp-2">Variable scopes, conditional branching, loops, and function declarations.</p>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-500">6th.jpeg</span>
+              <a href="6th.jpeg" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 text-xs font-semibold transition">
+                View Full Size &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group">
+          <a href="7th.jpeg" target="_blank" class="relative block overflow-hidden bg-slate-900 aspect-[3/4] group">
+            <img src="7th.jpeg" alt="Sheet 7: DOM Manipulation & Events" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+            <span class="absolute top-3 right-3 px-2 py-1 rounded-lg bg-slate-950/80 text-[10px] font-mono text-pink-300 border border-pink-500/30">
+              Page 7
+            </span>
+          </a>
+          <div class="p-5 space-y-2">
+            <h3 class="font-bold text-white text-sm group-hover:text-pink-300 transition">Sheet 7: DOM Manipulation & Events</h3>
+            <p class="text-xs text-slate-400 line-clamp-2">Event listeners, DOM tree traversal, and dynamic UI updates.</p>
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+              <span class="text-[11px] font-mono text-slate-500">7th.jpeg</span>
+              <a href="7th.jpeg" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-500/20 hover:bg-pink-500/30 text-pink-300 border border-pink-500/30 text-xs font-semibold transition">
+                View Full Size &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+
+  </div>
+</body>
+</html>

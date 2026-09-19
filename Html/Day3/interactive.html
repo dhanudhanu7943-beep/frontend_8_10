@@ -1,42 +1,105 @@
-<html>
-    <head>
-        <title>Interactive Level</title>
-    </head>
-    <body>
-        <h2>Input details</h2>
-        <input type="text" placeholder="Enter your name">
-        <hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Interactive Controls</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #10b981; padding-bottom: 10px; }
+    h2 { color: #059669; font-size: 18px; margin-top: 20px; }
+    hr { border: 0; border-top: 1px solid #f1f5f9; margin: 16px 0; }
+    input, textarea, select {
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-family: inherit;
+      width: 100%;
+      max-width: 320px;
+      box-sizing: border-box;
+    }
+    details {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 12px;
+      border-radius: 8px;
+    }
+    summary { font-weight: 600; cursor: pointer; color: #166534; }
+    dialog {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin: 10px 0;
+    }
+    button {
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Interactive HTML5 Elements</h1>
 
-        <h2>Textarea</h2>
-        <textarea rows="4" cols="30">
-        The  HTML element represents a multi-line, plain-text editing control, commonly used in web forms to collect sizeable user inputs like comments, feedback, or messages.
-</textarea>
-<hr>
-<h2> Selection</h2>
-<p>The HTML select element creates a drop-down menu, while the option tags nested inside it define the choices available to the user.</p>
-<select>
-    <option>HTML</option>
-    <option>CSS</option>
-    <option>JavaScript</option>
-</select>
-<hr>
-   <h2>Details</h2>
+    <h2>Input Details</h2>
+    <input type="text" placeholder="Enter your name">
+    <hr>
 
-     <details>
-    <summary>Click Here</summary>
-    <p>Welcome to HTML Interactive Tags.</p>
-</details>
-<hr>
-   <h2>Dialog</h2>
-     <dialog open>
-    <p>Hello! This is a dialog box.</p>
-</dialog><br><br><br><br><br>
-<hr>
-    <h2> Form</h2>
-    <form>
-    Name:
-    <input type="text">
-    <button>Submit</button>
-</form>
-    </body> 
+    <h2>Textarea Element</h2>
+    <textarea rows="4" cols="30" placeholder="Enter feedback...">The HTML textarea element represents a multi-line, plain-text editing control, commonly used in web forms to collect sizeable user inputs like comments, feedback, or messages.</textarea>
+    <hr>
+
+    <h2>Dropdown Selection (&lt;select&gt;)</h2>
+    <p>The HTML select element creates a drop-down menu with nested option tags:</p>
+    <select>
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="js">JavaScript</option>
+    </select>
+    <hr>
+
+    <h2>Collapsible Details (&lt;details&gt; &amp; &lt;summary&gt;)</h2>
+    <details>
+      <summary>Click Here to Expand</summary>
+      <p>Welcome to HTML5 Interactive Tags! This content toggles natively without JavaScript.</p>
+    </details>
+    <hr>
+
+    <h2>Native Dialog (&lt;dialog&gt;)</h2>
+    <dialog open>
+      <p>Hello! This is a native HTML5 dialog widget.</p>
+    </dialog>
+    <hr>
+
+    <h2>Interactive Form</h2>
+    <form onsubmit="event.preventDefault(); alert('Submitted!');">
+      <label for="form-name">Name:</label><br>
+      <input type="text" id="form-name" placeholder="Your name" required><br><br>
+      <button type="submit">Submit Form</button>
+    </form>
+  </div>
+</body>
 </html>

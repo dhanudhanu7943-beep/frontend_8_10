@@ -1,53 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Multimedia Master Hub</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    header {
+      text-align: center;
+      border-bottom: 2px solid #6366f1;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    h1 { color: #0f172a; margin: 0; font-size: 26px; }
+    h2 { color: #4338ca; font-size: 18px; margin-top: 24px; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin: 12px 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    audio, video { width: 100%; margin: 8px 0; }
+    video { max-height: 360px; background: #000; border-radius: 8px; }
+    .embed-frame {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
     <header>
-        <main>
-            <h1>Media Showcase</h1>
-            <h4>BUTTERFLY GALLERY</h4>
-         <img src="../Day11/assests/image/flower1.jpg" alt="butterfly" width="200" length="300"> 
-         <img src="../Day11/assests/image/flower2.jpg" alt="butterfly" width="200" length="300">
-         <img src="../Day11/assests/image/flower3.jpg" alt="butterfly" width="200" length="300">
-         <section>
-            <div>
-                <h4>Audio File</h4>
-            <audio controls autoplay>
-            <source src="assests/audio/Audio.mpeg" type="audio/mpeg">
-          </audio>  
-        </div>
-         </section>
-         <section>
-        <div>
-            <h4>Video Player</h4>
-            <video controls autoplay height="400" width="400">
-                  <source src="assests/video/Video .mp4" type="video/mp4">
-            </video>
-        </div>
-        </section>
-        <section>
-        <div>
-            <h4>Youtube and Google map</h4>
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/Pae6tjZ2jxs?si=gOpHchLRhGO5K3Hr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-       </div>
-        <div>
-            <br>
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.905560736493!2d80.2232513740485!3d12.849375917548258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52678b6ec7b719%3A0xc0cf6f565e5669c7!2sSLA%20Institute!5e0!3m2!1sen!2sin!4v1784993424117!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
-    </section>
-</main>
+      <h1>Universal Multimedia Master Showcase</h1>
+      <p>Audio &bull; Video &bull; Photo Gallery &bull; YouTube &bull; Google Maps &bull; PDF Embed</p>
     </header>
-    <footer>
-        <div>
-            <h4>Embedded PDF</h4>
-            <iframe src="assests/pdf/java-unit5.pdf" frameborder="0"></iframe>
+
+    <main>
+      <section>
+        <h2>1. Botanical &amp; Butterfly Gallery</h2>
+        <div class="gallery">
+          <img src="assests/image/flower1.jpg" alt="Bloom 1">
+          <img src="assests/image/flower2.jpg" alt="Bloom 2">
+          <img src="assests/image/flower3.jpg" alt="Bloom 3">
         </div>
-    </footer>
-    
+      </section>
+
+      <section>
+        <h2>2. Embedded Audio Track</h2>
+        <audio controls>
+          <source src="assests/audio/Audio.mpeg" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+      <section>
+        <h2>3. Native HTML5 Video Stream</h2>
+        <video controls>
+          <source src="assests/video/Video .mp4" type="video/mp4">
+          Your browser does not support the video element.
+        </video>
+      </section>
+
+      <section>
+        <h2>4. YouTube &amp; Geolocation Map</h2>
+        <iframe class="embed-frame" src="https://www.youtube.com/embed/Pae6tjZ2jxs?si=gOpHchLRhGO5K3Hr" title="YouTube video player" allowfullscreen></iframe>
+        <br><br>
+        <iframe class="embed-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.905560736493!2d80.2232513740485!3d12.849375917548258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52678b6ec7b719%3A0xc0cf6f565e5669c7!2sSLA%20Institute!5e0!3m2!1sen!2sin!4v1784993424117!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+      </section>
+
+      <section>
+        <h2>5. Embedded PDF Document</h2>
+        <iframe class="embed-frame" src="assests/pdf/java-unit5.pdf"></iframe>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Travel Agency Landing Page">
-     <meta property="og:title" content="Explore World Travels">
-    <meta property="og:description" content="Discover amazing destinations and affordable tour packages.">
-    <meta property="og:type" content="website">
-
-    <title>Travel Agency Landing Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore World Travels - Discover amazing destinations and affordable tour packages.">
+  <meta property="og:title" content="Explore World Travels">
+  <meta property="og:description" content="Discover amazing destinations and affordable tour packages worldwide.">
+  <meta property="og:type" content="website">
+  <title>Explore World Travels &bull; Travel Agency Landing Page</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #0284c7; padding-bottom: 8px; }
+    h2 { color: #0369a1; margin-top: 20px; }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 12px 0;
+    }
+    .pkg-card {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #0369a1;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-
+  <div class="container">
     <h1>Explore World Travels</h1>
 
     <h2>Home</h2>
-    <p>Welcome to our travel agency. We help you explore beautiful destinations around the world.</p>
+    <p>Welcome to our premier travel agency. We help you explore beautiful destinations around the world with custom itineraries.</p>
 
-    <h2>About</h2>
-    <p>We provide the best travel experiences with affordable prices and excellent customer service.</p>
+    <h2>About Us</h2>
+    <p>We provide the best travel experiences with affordable prices, certified local tour guides, and 24/7 customer service.</p>
 
-    <h2>Tour Packages</h2>
-    <ul>
-        <li>Ooty Tour</li>
-        <li>Goa Beach Tour</li>
-        <li>Kerala Backwaters</li>
-        
-    </ul>
+    <h2>Featured Tour Packages</h2>
+    <div class="packages-grid">
+      <div class="pkg-card">🌲 Ooty Hill Station Tour</div>
+      <div class="pkg-card">🏖️ Goa Beach Holiday</div>
+      <div class="pkg-card">🛶 Kerala Backwaters Cruise</div>
+    </div>
 
-    <h2>Gallery</h2>
-    <p>Photos of beaches, mountains, waterfalls, and famous tourist places.</p>
+    <h2>Gallery &amp; Attractions</h2>
+    <p>Curated photography showcasing pristine beaches, misty mountains, serene waterfalls, and historic world heritage landmarks.</p>
 
-    <h2>Contact</h2>
-    <p>Email: info@exploretravels.com</p>
-    <p>Phone: +91 9876543210</p>
-
-    <hr>
+    <h2>Contact Information</h2>
+    <p><strong>Email:</strong> info@exploretravels.com</p>
+    <p><strong>Phone:</strong> +91 9876543210</p>
+  </div>
 </body>
 </html>

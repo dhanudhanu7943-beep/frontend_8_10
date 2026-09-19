@@ -1,42 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>semantic 4</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Five Paragraphs with Formatting Tags</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #8b5cf6; padding-bottom: 10px; }
+    .card {
+      background: #f5f3ff;
+      border-left: 4px solid #8b5cf6;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
     <h1>Five Paragraphs with Formatting Tags</h1>
 
-    <p>
-        <b>HTML</b> is the <strong>standard markup language</strong> used to create web pages.
-        It helps in <i>designing</i> and <em>structuring</em> website content.
-    </p>
-<br>
-    <p>
-        <u>CSS</u> is used to style web pages.
-        It can <mark>highlight important content</mark> and make websites<br>
-        <small>more attractive</small>.
-    </p>
-<br>
-    <p>
-        <del>Old technology</del> has been replaced by
-        <ins>modern web technologies</ins>.<br><br>
-        Learning HTML and CSS is <b>essential</b> for beginners.
-    </p>
-<br>
-    <p>
-        Water is written as H<sub>2</sub>O.<br>
-        The mathematical expression x<sup>2</sup> represents<br><br>
-        "x squared." These are examples of <strong>subscript</strong>
-        and <strong>superscript</strong>.
-    </p>
-<br>
-    <p>
-        <mark>Practice every day</mark> to improve your coding skills.<br><br>
-        Stay <em>confident</em>, work <b>hard</b>, and never
-        <del>give up</del>. <ins>Keep learning!</ins>
-    </p>
+    <div class="card">
+      <p><b>HTML</b> is the <strong>standard markup language</strong> used to create web pages. It helps in <i>designing</i> and <em>structuring</em> website content.</p>
+    </div>
 
+    <div class="card">
+      <p><u>CSS</u> is used to style web pages. It can <mark>highlight important content</mark> and make websites <small>more attractive</small>.</p>
+    </div>
+
+    <div class="card">
+      <p><del>Old technology</del> has been replaced by <ins>modern web technologies</ins>. Learning HTML and CSS is <b>essential</b> for beginners.</p>
+    </div>
+
+    <div class="card">
+      <p>Water is written as <strong>H<sub>2</sub>O</strong>. The mathematical expression <strong>x<sup>2</sup></strong> represents "x squared." These are examples of <strong>subscript</strong> and <strong>superscript</strong>.</p>
+    </div>
+
+    <div class="card">
+      <p><mark>Practice every day</mark> to improve your coding skills. Stay <em>confident</em>, work <b>hard</b>, and never <del>give up</del>. <ins>Keep learning!</ins></p>
+    </div>
+  </div>
 </body>
 </html>

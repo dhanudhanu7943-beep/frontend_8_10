@@ -1,67 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>product</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Registration &amp; Inventory Report</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 24px;
+      margin: 0;
+    }
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    h1 { color: #0f172a; margin-top: 0; border-bottom: 2px solid #ea580c; padding-bottom: 8px; font-size: 24px; }
+    h2 { color: #c2410c; font-size: 20px; margin-top: 28px; }
+    label { font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 4px; display: block; }
+    input[type="text"], input[type="number"], select, input[type="file"] {
+      width: 100%;
+      max-width: 380px;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      margin-bottom: 12px;
+    }
+    .btn-group { display: flex; gap: 10px; margin-top: 8px; }
+    input[type="submit"] {
+      background: #ea580c;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    input[type="reset"] {
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 10px;
+      text-align: left;
+    }
+    th { background: #fff7ed; color: #c2410c; }
+    .in-stock { color: #059669; font-weight: bold; }
+    hr { border: 0; border-top: 1px solid #e2e8f0; margin: 28px 0; }
+  </style>
 </head>
 <body>
-    <h1>Product Registration & Inventory Report</h1>
-    <form>
-        Product ID:<br>
-    <input type="text"><br><br>
+  <div class="container">
+    <h1>Product Registration &amp; Inventory Report</h1>
+    <form onsubmit="event.preventDefault(); alert('Product registered successfully!');">
+      <label for="pid">Product ID:</label>
+      <input type="text" id="pid" placeholder="e.g. P101" required>
 
-    Product Name:<br>
-    <input type="text"><br><br>
+      <label for="pname">Product Name:</label>
+      <input type="text" id="pname" placeholder="Enter product title" required>
 
-    Brand:<br>
-    <input type="text"><br><br>
+      <label for="brand">Brand:</label>
+      <input type="text" id="brand" placeholder="e.g. Samsung, Apple, Dell" required>
 
-    Category:<br>
-    <select>
+      <label for="category">Category:</label>
+      <select id="category" required>
+        <option value="">-- Select Category --</option>
         <option>Mobile</option>
         <option>Laptop</option>
         <option>TV</option>
         <option>Accessories</option>
-    </select><br><br>
+      </select>
 
-    Price:<br>
-    <input type="number"><br><br>
+      <label for="price">Price (&#8377;):</label>
+      <input type="number" id="price" min="0" placeholder="e.g. 20000" required>
 
-    Quantity:<br>
-    <input type="number"><br><br>
+      <label for="qty">Quantity in Stock:</label>
+      <input type="number" id="qty" min="0" placeholder="e.g. 50" required>
 
-    Supplier:<br>
-    <input type="text"><br><br>
+      <label for="supplier">Supplier Name:</label>
+      <input type="text" id="supplier" placeholder="Supplier Company">
 
-    Product Image:<br>
-    <input type="file"><br><br>
+      <label for="pimg">Product Image:</label>
+      <input type="file" id="pimg" accept="image/*">
 
-    <input type="submit" value="Submit">
-    <input type="reset" value="Reset">
-</form>
-
-<br>
-
-<table border="1">
-    <tr>
-        <th>Product ID</th>
-        <th>Product Name</th>
-        <th>Brand</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Stock Status</th>
-    </tr>
-
-    <tr>
-        <td>P101</td>
-        <td>Smartphone</td>
-        <td>Samsung</td>
-        <td>20000</td>
-        <td>15</td>
-        <td>Available</td>
-    </tr>
-</table>
+      <div class="btn-group">
+        <input type="submit" value="Register Product">
+        <input type="reset" value="Reset Form">
+      </div>
     </form>
+
+    <hr>
+
+    <h2>Inventory Stock Report</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Brand</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Stock Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>P101</td>
+          <td>Smartphone</td>
+          <td>Samsung</td>
+          <td>&#8377;20,000</td>
+          <td>45</td>
+          <td><span class="in-stock">In Stock</span></td>
+        </tr>
+        <tr>
+          <td>P102</td>
+          <td>Inspiron Laptop</td>
+          <td>Dell</td>
+          <td>&#8377;55,000</td>
+          <td>18</td>
+          <td><span class="in-stock">In Stock</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
