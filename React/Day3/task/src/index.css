@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(145, 213, 240, 0.432);
+    height: 40px;
+}
+.nav 
+{
+    display: flex;
+    gap: 20px;
+
+}
+.nav Link {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.banner {
+    background-color: rgb(238, 185, 185);
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    background-color: rgb(94, 86, 86);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+/* .img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgb(238, 185, 185);
+} */

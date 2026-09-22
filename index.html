@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevMaster Pro &bull; Full-Stack Frontend Engineering &amp; Task Showcase</title>
-  <meta name="description" content="Comprehensive full-stack frontend development learning portal and interactive portfolio showcasing 164 practice tasks across HTML5, CSS3, Bootstrap 5, Tailwind CSS, JavaScript, React.js, and Handwritten Study Notes.">
+  <meta name="description" content="Comprehensive full-stack frontend development learning portal and interactive portfolio showcasing 168 practice tasks across HTML5, CSS3, Bootstrap 5, Tailwind CSS, JavaScript, React.js, and Handwritten Study Notes.">
   <meta name="theme-color" content="#090d16">
 
   <!-- Tailwind CSS CDN -->
@@ -125,7 +125,7 @@
 
       <!-- Quick Nav Links -->
       <nav class="hidden xl:flex items-center gap-1 font-medium text-xs">
-        <button onclick="switchTrack('all')" class="nav-tab-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition active-tab" data-track="all">All Tasks (164)</button>
+        <button onclick="switchTrack('all')" class="nav-tab-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition active-tab" data-track="all">All Tasks (168)</button>
         <button onclick="switchTrack('html')" class="nav-tab-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-orange-400 hover:bg-orange-950/20 transition flex items-center gap-1.5" data-track="html">
           <span class="w-2 h-2 rounded-full bg-orange-500"></span> HTML5 (46)
         </button>
@@ -142,7 +142,7 @@
           <span class="w-2 h-2 rounded-full bg-amber-400"></span> JavaScript (55)
         </button>
         <button onclick="switchTrack('react')" class="nav-tab-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/20 transition flex items-center gap-1.5" data-track="react">
-          <span class="w-2 h-2 rounded-full bg-cyan-400"></span> React.js (3)
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span> React.js (7)
         </button>
         <button onclick="switchTrack('notes')" class="nav-tab-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-pink-400 hover:bg-pink-950/20 transition flex items-center gap-1.5" data-track="notes">
           <span class="w-2 h-2 rounded-full bg-pink-400"></span> Notes (8)
@@ -163,7 +163,7 @@
         <!-- Overall Progress Pill -->
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-mono text-emerald-400 shadow-inner">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span id="nav-completion-stat">0 / 164 Done (0%)</span>
+          <span id="nav-completion-stat">0 / 168 Done (0%)</span>
         </div>
       </div>
 
@@ -185,7 +185,7 @@
           <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold">
             <span>✨ Complete Frontend Mastery Workspace</span>
             <span class="text-slate-500">&bull;</span>
-            <span id="total-tasks-badge">164 Practice Tasks Live</span>
+            <span id="total-tasks-badge">168 Practice Tasks Live</span>
           </div>
 
           <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
@@ -287,8 +287,8 @@
             <span class="text-xs text-slate-400 font-medium group-hover:text-cyan-400 transition">React.js</span>
             <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
           </div>
-          <div class="text-xl font-extrabold text-white mt-1" id="stat-react-count">3 Tasks</div>
-          <div class="text-[11px] text-slate-400" id="stat-react-pct">Vite + Modular App</div>
+          <div class="text-xl font-extrabold text-white mt-1" id="stat-react-count">7 Tasks</div>
+          <div class="text-[11px] text-slate-400" id="stat-react-pct">Vite + React Router + Multi-Page</div>
         </div>
 
         <!-- Notes / Archive Stat -->
@@ -314,7 +314,7 @@
         <!-- Category Tab Pills -->
         <div class="flex items-center gap-1.5 overflow-x-auto pb-2 lg:pb-0 scrollbar-none text-xs font-semibold">
           <button onclick="switchTrack('all')" id="pill-all" class="track-pill px-4 py-2 rounded-xl bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition shrink-0">
-            All Tracks (<span id="count-all">164</span>)
+            All Tracks (<span id="count-all">168</span>)
           </button>
           <button onclick="switchTrack('html')" id="pill-html" class="track-pill px-4 py-2 rounded-xl bg-slate-900/90 text-slate-300 hover:text-orange-400 hover:bg-slate-800 border border-slate-800 transition shrink-0 flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-orange-500"></span> HTML5 (<span id="count-html">46</span>)
@@ -332,7 +332,7 @@
             <span class="w-2 h-2 rounded-full bg-amber-400"></span> JavaScript (<span id="count-javascript">55</span>)
           </button>
           <button onclick="switchTrack('react')" id="pill-react" class="track-pill px-4 py-2 rounded-xl bg-slate-900/90 text-slate-300 hover:text-cyan-400 hover:bg-slate-800 border border-slate-800 transition shrink-0 flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-cyan-400"></span> React (<span id="count-react">3</span>)
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span> React (<span id="count-react">7</span>)
           </button>
           <button onclick="switchTrack('notes')" id="pill-notes" class="track-pill px-4 py-2 rounded-xl bg-slate-900/90 text-slate-300 hover:text-pink-400 hover:bg-slate-800 border border-slate-800 transition shrink-0 flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-pink-400"></span> Notes (<span id="count-notes">8</span>)
@@ -390,12 +390,12 @@
           type="text" 
           id="search-input" 
           oninput="renderCards()" 
-          placeholder="Search 164 tasks by topic, day (e.g. Day 9, Day 20), keyword (e.g. hospital, grid, flexbox, react, promise, array, loops, handwritten)... (Press / or Ctrl+K to focus)" 
+          placeholder="Search 168 tasks by topic, day (e.g. Day 9, Day 20), keyword (e.g. hospital, grid, flexbox, react router, tailwind, promise, array, loops, handwritten)... (Press / or Ctrl+K to focus)" 
           class="w-full pl-11 pr-28 py-3 rounded-2xl bg-slate-900/90 border border-slate-800 text-slate-100 placeholder-slate-500 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition shadow-inner"
         >
         <div class="absolute inset-y-0 right-0 pr-3 flex items-center gap-2">
           <span id="search-result-badge" class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-slate-800 text-slate-400">
-            Showing 164 / 164
+            Showing 168 / 168
           </span>
           <button onclick="clearSearch()" id="clear-search-btn" class="hidden text-xs text-slate-400 hover:text-white px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 transition">
             &times;
@@ -672,6 +672,10 @@
         <span>&bull;</span>
         <a href="React/Day2/task/dist/index.html" class="hover:text-cyan-400 transition">React Card Hub</a>
         <span>&bull;</span>
+        <a href="React/Day3/task/dist/index.html" class="hover:text-cyan-400 transition">React Router SPA</a>
+        <span>&bull;</span>
+        <a href="React/Day4/program/dist/index.html" class="hover:text-cyan-400 transition">React Multi-Page Portal</a>
+        <span>&bull;</span>
         <a href="writting work/index.html" class="hover:text-pink-400 transition">Study Notes Gallery</a>
       </div>
 
@@ -684,7 +688,7 @@
   <!-- ========================================== -->
   <script>
     // ==========================================
-    // 1. MASTER TASKS DATABASE (164 TASKS)
+    // 1. MASTER TASKS DATABASE (168 TASKS)
     // ==========================================
     const TASKS_DATA = [
   {
@@ -2891,6 +2895,70 @@
       "ES Modules"
     ],
     "desc": "Vite development source root & module entrypoint orchestrating modular Button, Input, and Card JSX components."
+  },
+  {
+    "id": "react-d3-spa",
+    "track": "react",
+    "day": "Day 3",
+    "title": "React Router SPA Navigation, Navbar & Profile Banner",
+    "path": "React/Day3/task/dist/index.html",
+    "tags": [
+      "React Router",
+      "Vite",
+      "SPA Navigation",
+      "Navbar Component",
+      "Dynamic Banner",
+      "Route Matching"
+    ],
+    "desc": "Interactive Single Page Application built with React Router, modular navigation bar, and styled developer profile banner."
+  },
+  {
+    "id": "react-d3-vite-source",
+    "track": "react",
+    "day": "Day 3",
+    "title": "React Router SPA Navigation: Source Architecture & Entry",
+    "path": "React/Day3/task/index.html",
+    "tags": [
+      "React Router",
+      "Vite",
+      "JSX Architecture",
+      "Modular Pages",
+      "ES Modules",
+      "Dev Entry"
+    ],
+    "desc": "Vite development source root & module entrypoint orchestrating React Router DOM navigation, Home & About pages."
+  },
+  {
+    "id": "react-d4-multipage",
+    "track": "react",
+    "day": "Day 4",
+    "title": "React 19 + React Router + Tailwind Multi-Page Enterprise Portal",
+    "path": "React/Day4/program/dist/index.html",
+    "tags": [
+      "React 19",
+      "React Router",
+      "Tailwind CSS",
+      "Multi-Page App",
+      "Navbar",
+      "7 Route Pages"
+    ],
+    "desc": "Comprehensive 7-route web application featuring Home, About, Contact, Course, Service, Help, and Gallery pages powered by React Router & Tailwind."
+  },
+  {
+    "id": "react-d4-vite-source",
+    "track": "react",
+    "day": "Day 4",
+    "title": "React 19 + Tailwind Multi-Page Portal: Source Architecture & Entry",
+    "path": "React/Day4/program/index.html",
+    "tags": [
+      "React 19",
+      "Tailwind CSS",
+      "React Router",
+      "Vite Source",
+      "Multi-Page Routes",
+      "ES Modules"
+    ],
+    "desc": "Vite development source entrypoint configuring Tailwind CSS and modular routing across 7 distinct page components."
   },
   {
     "id": "notes-gallery",
