@@ -1,0 +1,35 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.box {
+            width: 150px;
+            height: 80px;
+            margin: 10px;
+            color: white;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        .red {
+            background-color: rgb(236, 139, 139);
+        }
+
+        .green {
+            background-color: green;
+            display: none;
+        }
+
+        .blue {
+            background-color: rgb(115, 115, 236);
+            visibility: hidden;
+        }

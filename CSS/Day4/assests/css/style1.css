@@ -21,7 +21,7 @@ body{
   text-align: center;
 }
 .inline-element {
-  display: inline-block; /* or display: block; */
+  display: inline-block; 
   width: 200px;
   height: 100px;
 }
